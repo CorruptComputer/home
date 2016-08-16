@@ -1568,7 +1568,7 @@
 
 		a:hover {
 			border-bottom-color: transparent;
-			color: #4acaa8 !important;
+			color: #db6a60 !important;
 		}
 
 	strong, b {
@@ -1720,7 +1720,7 @@
 	}
 
 	header.major h2 {
-		color: #4acaa8;
+		color: #db6a60;
 		font-size: 3.5em;
 	}
 
@@ -1783,7 +1783,7 @@
 		input[type="email"]:focus,
 		select:focus,
 		textarea:focus {
-			border-color: #4acaa8;
+			border-color: #db6a60;
 		}
 
 	.select-wrapper {
@@ -1893,7 +1893,7 @@
 
 		input[type="checkbox"]:focus + label:before,
 		input[type="radio"]:focus + label:before {
-			border-color: #4acaa8;
+			border-color: #db6a60;
 		}
 
 	input[type="checkbox"] + label:before {
@@ -2086,7 +2086,7 @@
 				}
 
 				ul.feature-icons li:before {
-					background: #4acaa8;
+					background: #db6a60;
 					border-radius: 100%;
 					color: #ffffff;
 					display: block;
@@ -2373,7 +2373,7 @@
 		input[type="reset"].special,
 		input[type="button"].special,
 		.button.special {
-			background-color: #4acaa8;
+			background-color: #db6a60;
 			color: #ffffff !important;
 		}
 
@@ -2381,14 +2381,14 @@
 			input[type="reset"].special:hover,
 			input[type="button"].special:hover,
 			.button.special:hover {
-				background-color: #5ed0b1;
+				background-color: #E07D75;
 			}
 
 			input[type="submit"].special:active,
 			input[type="reset"].special:active,
 			input[type="button"].special:active,
 			.button.special:active {
-				background-color: #39c29d;
+				background-color: #D6574B;
 			}
 
 		input[type="submit"].disabled, input[type="submit"]:disabled,
@@ -2443,9 +2443,22 @@
 /* Header */
 
 	#header {
-		background: #4acaa8;
-		color: #d1f1e9;
+		display: -moz-flex;
+		display: -webkit-flex;
+		display: -ms-flex;
+		display: flex;
+		-moz-flex-direction: column;
+		-webkit-flex-direction: column;
+		-ms-flex-direction: column;
+		flex-direction: column;
+		-moz-justify-content: space-between;
+		-webkit-justify-content: space-between;
+		-ms-justify-content: space-between;
+		justify-content: space-between;
+		background: #db6a60;
+		color: #F6D9D7;
 		height: 100%;
+		overflow-y: auto;
 		position: fixed;
 		text-align: center;
 		top: 0;
@@ -2462,11 +2475,11 @@
 			}
 
 		#header header p {
-			color: #b6e9dc;
+			color: #F0C3BF;
 		}
 
 		#header a {
-			color: #d1f1e9;
+			color: #F6D9D7;
 		}
 
 			#header a:hover {
@@ -2474,6 +2487,10 @@
 			}
 
 		#header > header {
+			-moz-flex-shrink: 0;
+			-webkit-flex-shrink: 0;
+			-ms-flex-shrink: 0;
+			flex-shrink: 0;
 			padding: 3em;
 		}
 
@@ -2489,16 +2506,19 @@
 			}
 
 			#header > header p {
-				color: #d1f1e9;
+				color: #F6D9D7;
 				font-style: italic;
 				margin: 1em 0 0 0;
 			}
 
 		#header > footer {
+			-moz-flex-shrink: 0;
+			-webkit-flex-shrink: 0;
+			-ms-flex-shrink: 0;
+			flex-shrink: 0;
 			bottom: 0;
 			left: 0;
 			padding: 2em;
-			position: absolute;
 			width: 100%;
 		}
 
@@ -2507,41 +2527,48 @@
 			}
 
 				#header > footer .icons li a {
-					color: #b6e9dc;
+					color: #F0C3BF;
 				}
 
-		#header > nav ul {
-			list-style: none;
-			margin: 0;
-			padding: 0;
+		#header > nav {
+			-moz-flex-grow: 1;
+			-webkit-flex-grow: 1;
+			-ms-flex-grow: 1;
+			flex-grow: 1;
 		}
 
-			#header > nav ul li {
-				border-top: solid 2px #5ccfb0;
-				display: block;
+			#header > nav ul {
+				list-style: none;
+				margin: 0;
 				padding: 0;
 			}
 
-				#header > nav ul li a {
-					-moz-transition: none;
-					-webkit-transition: none;
-					-ms-transition: none;
-					transition: none;
-					border: 0;
-					color: #ffffff !important;
+				#header > nav ul li {
+					border-top: solid 2px #DE786F;
 					display: block;
-					padding: 0.85em 0;
-					text-decoration: none;
+					padding: 0;
 				}
 
-					#header > nav ul li a.active {
-						background: #fff;
-						color: #4acaa8 !important;
+					#header > nav ul li a {
+						-moz-transition: none;
+						-webkit-transition: none;
+						-ms-transition: none;
+						transition: none;
+						border: 0;
+						color: #ffffff !important;
+						display: block;
+						padding: 0.85em 0;
+						text-decoration: none;
 					}
 
-				#header > nav ul li:first-child {
-					border-top: 0;
-				}
+						#header > nav ul li a.active {
+							background: #fff;
+							color: #db6a60 !important;
+						}
+
+					#header > nav ul li:first-child {
+						border-top: 0;
+					}
 
 /* Wrapper */
 
@@ -2729,7 +2756,7 @@
 				#header > footer {
 					bottom: auto;
 					left: auto;
-					margin: 1em 0 0 0;
+					margin: 0.5em 0 0 0;
 					position: relative;
 					right: auto;
 					top: auto;
@@ -2815,7 +2842,7 @@
 					}
 
 					#titleBar .toggle:before {
-						background: #4acaa8;
+						background: #db6a60;
 						color: #ffffff;
 						content: '\f0c9';
 						display: block;

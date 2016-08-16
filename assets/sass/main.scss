@@ -873,9 +873,13 @@
 /* Header */
 
 	#header {
+		@include vendor('display', 'flex');
+		@include vendor('flex-direction', 'column');
+		@include vendor('justify-content', 'space-between');
 		background: _palette(header, bg);
 		color: _palette(header, fg);
 		height: 100%;
+		overflow-y: auto;
 		position: fixed;
 		text-align: center;
 		top: 0;
@@ -911,6 +915,7 @@
 		}
 
 		> header {
+			@include vendor('flex-shrink', '0');
 			padding: 3em;
 
 			.avatar {
@@ -932,10 +937,10 @@
 		}
 
 		> footer {
+			@include vendor('flex-shrink', '0');
 			bottom: 0;
 			left: 0;
 			padding: 2em;
-			position: absolute;
 			width: 100%;
 
 			.icons {
@@ -950,6 +955,8 @@
 		}
 
 		> nav {
+			@include vendor('flex-grow', '1');
+
 			ul {
 				list-style: none;
 				margin: 0;
@@ -1196,7 +1203,7 @@
 				> footer {
 					bottom: auto;
 					left: auto;
-					margin: 1em 0 0 0;
+					margin: 0.5em 0 0 0;
 					position: relative;
 					right: auto;
 					top: auto;
