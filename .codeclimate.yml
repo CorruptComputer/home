@@ -1,0 +1,43 @@
+---
+engines:
+  csslint:
+    enabled: true
+    checks:
+      universal-selector:
+        enabled: false
+      unique-headings:
+        enabled: false
+      important:
+        enabled: false
+      qualified-headings:
+        enabled: false
+  duplication:
+    enabled: true
+    config:
+      languages:
+      - ruby
+      - javascript
+      - python
+      - php
+    checks:
+      Similar code:
+        enabled: false
+  eslint:
+    enabled: true
+    checks:
+      wrap-iife:
+        enabled: false
+
+  fixme:
+    enabled: true
+ratings:
+  paths:
+  - "**.css"
+  - "**.inc"
+  - "**.js"
+  - "**.jsx"
+  - "**.module"
+  - "**.php"
+  - "**.py"
+  - "**.rb"
+exclude_paths: []
