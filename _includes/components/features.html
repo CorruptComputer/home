@@ -1,0 +1,25 @@
+	<div class="features">
+
+		{% for feature in include.features %}
+
+			<article>
+
+				{% if feature.icon %}
+					<span class="icon {{ feature.icon }}"></span>
+				{% endif %}
+
+				<div class="content">
+					<p>{{ feature.content }}</p>
+
+					{% if feature.url %}
+						<ul class="actions">
+							<li><a class="button" href="#">Read More</a></li>
+						</ul>
+					{% endif %}
+
+				</div>
+			</article>
+
+		{% endfor %}
+
+	</div>

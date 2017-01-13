@@ -1,2 +1,4 @@
-desktop.ini
-Thumbs.db
+### Jekyll ###
+_site/
+.sass-cache/
+.jekyll-metadata

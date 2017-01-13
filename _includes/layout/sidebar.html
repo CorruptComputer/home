@@ -1,0 +1,68 @@
+<!-- Sidebar -->
+<div id="sidebar">
+	<div class="inner">
+
+		<!-- Menu -->
+		<nav id="menu">
+			<header class="major">
+				<h2>Menu</h2>
+			</header>
+			<ul>
+				<li><a href="{{ site.baseurl }}/">Home</a></li>
+				<li><a href="{{ site.baseurl }}/blog">Blog</a></li>
+		</nav>
+
+		<!-- Section -->
+		<section>
+			<header class="major">
+				<h2>Get in touch</h2>
+			</header>
+			<div class="container">
+				<h3>
+      Contact Me
+			</h3>
+				<form action="http://formspree.io/contact@nickolasgupton.me" method="post">
+					<div class="row uniform">
+						<div class="12u">
+							<input type="text" name="name" id="name" placeholder="Name" />
+						</div>
+					</div>
+					<div class="row uniform">
+						<div class="12u">
+							<input type="email" name="email" id="email" placeholder="Email" />
+						</div>
+					</div>
+					<div class="row uniform">
+						<div class="12u">
+							<input type="text" name="_subject" id="subject" placeholder="Subject" />
+						</div>
+					</div>
+					<div class="row uniform">
+						<div class="12u">
+							<textarea name="message" id="message" placeholder="Message" rows="6"></textarea>
+						</div>
+					</div>
+					<div style="display:none">
+						<input type="hidden" name="_subject" value="New submission!">
+						<input type="hidden" name="_next" value="http://www.nickolasgupton.me/thanks.html">
+						<input type="text" name="_gotcha">
+					</div>
+					<div class="row uniform">
+						<div class="12u">
+							<ul class="actions">
+								<li>
+									<input type="submit" class="special" value="Send Message" />
+								</li>
+							</ul>
+						</div>
+					</div>
+				</form>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<footer id="footer">
+			<p class="copyright">&copy; Nickolas Gupton. All rights reserved.</p>
+		</footer>
+	</div>
+</div>
