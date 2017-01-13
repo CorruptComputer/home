@@ -113,38 +113,4 @@
 				}
 			}
 		}
-
-		@include breakpoint(xsmall) {
-			article {
-				@include vendor('flex-direction', 'column');
-				@include vendor('align-items', 'flex-start');
-
-				.icon {
-					height: 6em;
-					line-height: 6em;
-					margin: 0 0 (_size(element-margin) * 0.75) 0;
-					width: 6em;
-
-					&:before {
-						font-size: 1.5rem;
-					}
-
-					&:after {
-						height: 4em;
-						margin: -2em 0 0 -2em;
-						width: 4em;
-					}
-				}
-			}
-		}
-
-		@include breakpoint(xsmall) {
-			article {
-				.icon {
-					&:before {
-						font-size: 1.25rem;
-					}
-				}
-			}
-		}
 	}
