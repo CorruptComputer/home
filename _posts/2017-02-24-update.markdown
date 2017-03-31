@@ -2,7 +2,6 @@
 layout: post
 title:  "Small tweaks and updates."
 date:   2017-02-24 21:00:00
-categories: website
 image: /images/blog/site update 1.png
 ---
 

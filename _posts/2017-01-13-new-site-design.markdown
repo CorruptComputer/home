@@ -2,7 +2,6 @@
 layout: post
 title:  "New site design!"
 date:   2017-01-13 15:30:00
-categories: website
 image: /images/blog/new site.png
 ---
 
