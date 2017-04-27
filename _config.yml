@@ -7,6 +7,7 @@ url: "http://www.nickolasgupton.me" # the base hostname & protocol for your site
 
 # Plugins
 gems: ["jekyll-paginate"]
+exclude: [vendor]
 
 # Build settings
 markdown: kramdown
