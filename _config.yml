@@ -6,7 +6,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://www.nickolasgupton.me" # the base hostname & protocol for your site
 
 # Plugins
-gems: ["jekyll-paginate"]
+plugins: ["jekyll-paginate"]
 exclude: [vendor]
 
 # Build settings
