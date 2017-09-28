@@ -1,9 +1,17 @@
 ---
 layout: default
 
-features1:
+currentprojects:
+- icon: fa-commenting
+  content: Polizzia Hut, an open source Discord bot.
+  url: https://github.com/CorruptComputer/PolizziaHut
+- icon: fa-graduation-cap 
+  content: Learning all the things
+  url: https://www.angelo.edu
+
+thingsido:
 - icon: fa-code
-  content: Java, C++, Basic Web
+  content: Java, C++ 98, Basic Web
 - icon: fa-code-fork
   content: Git
 - icon: fa-linux
@@ -11,12 +19,11 @@ features1:
 - icon: fa-server
   content: Servers and Networking
 
-features2:
+learning:
 - icon: fa-code
-  content: Advanced C++
-- icon: fa-gamepad
-  content: Unreal Engine 4
-
+  content: C++ 11, Python 3
+- icon: fa-database
+  content: Machine Learning/Neural Networks
 
 posts:
 - image: /images/blog/GNOME desktop.png
@@ -56,16 +63,22 @@ posts:
 <!-- Section -->
 <section>
   <header class="major">
+      <h2>Things I currently working on!</h2>
+    </header>
+    <p>Some of my current projects.</p>
+    {% include components/features.html features=page.currentprojects %}
+
+  <header class="major">
     <h2>Things I can do!</h2>
   </header>
   <p>I don't claim to be an expert is these, but I can do some stuff with them.</p>
-  {% include components/features.html features=page.features1 %}
+  {% include components/features.html features=page.thingsido %}
 
   <header class="major">
     <h2>Things I am learning!</h2>
   </header>
   <p>I love to learn and am happy to learn almost anything, but these are what I am learning right now.</p>
-  {% include components/features.html features=page.features2 %}
+  {% include components/features.html features=page.learning %}
 </section>
 
 <!-- Section -->
