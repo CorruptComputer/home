@@ -1,90 +1,70 @@
 ---
 layout: default
-
-currentprojects:
-- icon: fa-commenting
-  content: Polizzia Hut, an open source Discord bot.
-  url: https://github.com/CorruptComputer/PolizziaHut
-- icon: fa-graduation-cap 
-  content: Learning all the things
-  url: https://www.angelo.edu
-
-thingsido:
-- icon: fa-code
-  content: Java, C++ 98, Basic Web
-- icon: fa-code-fork
-  content: Git
-- icon: fa-linux
-  content: Linux
-- icon: fa-server
-  content: Servers and Networking
-
-learning:
-- icon: fa-code
-  content: C++ 11, Python 3
-- icon: fa-database
-  content: Machine Learning/Neural Networks
-
-posts:
-- image: /images/blog/GNOME desktop.png
-  title: My Adventures with Linux
-  excerpt: I love Linux, but there are so many different distributions. So how can I know if my current one is my favorite if I don’t try them all?
-  url: "/2017/04/26/linux.html"
-
-- image: /images/blog/digital ocean discord bot.png
-  title: Digital Ocean and a Discord Bot
-  excerpt: If anyone has ever used NadekoBot, you know that its great. But you know what could make it even better? Being 24/7.
-  url: "/2017/03/31/discord-bot.html"
-  
-- image: /images/blog/new site.png
-  title: New Site Design!
-  excerpt: More about why I wanted this new design.
-  url: "/2017/01/13/new-site-design.html"
-
 ---
 
-<!-- Banner -->
-<section id="banner">
-  <div class="content">
-    <header>
-      <h1>Who am I?</h1>
-    </header>
-    <p>I'm currently a student at Angelo State University, studying Computer Science.
-      I started programming in high school, and had a great teacher.
-      My first language was Java and I will always remember my first <code>Hello world!</code>, ever since I have been trying to learn everything I can about programming.
-      I have become fascinated by the fact that computers are only limited to the knowledge and skill of the developer, there's almost no end to what is possible.
-    </p>
+<div id="content">
+  <div class="bigBox">
+    <h2>Projects I've worked on!</h2>
+    <div class="row">
+      <fieldset>
+        <legend>In Development</legend>
+        <h3><i class="fa fa-graduation-cap" aria-hidden="true"></i><a href="http://www.angelo.edu/">College!</a></h3>
+        <p>I am currently a college student at Angelo State University, studying Computer Science. I started programming in high school, and had a great teacher. My first language was Java and I will always remember my first <code>Hello world!</code>
+          It has inspired me to learn everything I can about programming and I have realized that computers are only limited to the knowledge and skill of the developer, there's almost no end to what is possible!
+        </p>
+      </fieldset>
+      <fieldset>
+        <legend>Finished, still active</legend>
+        <h3><a href="https://github.com/CorruptComputer/Officer-Beepsky">Officer-Beepsky</a>:</h3>
+        <p>Officer-Beepsky is an open source Discord bot. I made it for some friends and me to use in order to play music and manage our server. It is built with <a href="https://github.com/austinv11/Discord4J">Discord4J</a> as its main API to use to
+          connect to Discord.
+        </p>
+
+        <h3><a href="https://github.com/CorruptComputer/CorruptComputer.GitHub.io">My Website</a>:</h3>
+        <p>The site you're currently looking at. I am not a frontend developer, but I hope it still looks alright!
+        </p>
+      </fieldset>
+      <fieldset>
+        <legend>Finished, EOL</legend>
+        <h3><a href="https://tgstation13.org/wiki/AsteroidStation">/tg/ Station 13: Asteroid Station</a>:</h3>
+        <p>Asteroid Station was a collaborative effort between myself and <a href="https://github.com/Jordie0608">Jordie0608</a>. It was an ambitious project, a large space station set inside of an Asteroid, and it was fairly popular during its lifetime,
+          however was never completely finished and now with the codebase moving on without it, it sadly is no longer maintained.
+        </p>
+      </fieldset>
+    </div>
   </div>
-  <span class="image object">
-		<img src="{{ site.baseurl }}/images/lion.jpg" alt="Banner image" />
-	</span>
-</section>
 
-<!-- Section -->
-<section>
-  <header class="major">
-      <h2>Things I'm currently working on!</h2>
-    </header>
-    <p>Some of my current projects.</p>
-    {% include components/features.html features=page.currentprojects %}
+  <div class="line"></div>
 
-  <header class="major">
-    <h2>Things I can do!</h2>
-  </header>
-  <p>I don't claim to be an expert is these, but I can do some stuff with them.</p>
-  {% include components/features.html features=page.thingsido %}
-
-  <header class="major">
-    <h2>Things I am learning!</h2>
-  </header>
-  <p>I love to learn and am happy to learn almost anything, but these are what I am learning right now.</p>
-  {% include components/features.html features=page.learning %}
-</section>
-
-<!-- Section -->
-<section>
-  <header class="major">
-    <h2>Featured blog posts!</h2>
-  </header>
-  {% include components/posts.html posts=page.posts %}
-</section>
+  <div class="bigBox">
+    <h2>What I can do!</h2>
+    <p>These are all relative to each other, so just because I use it a lot doesn't mean I'm an expert.</p>
+    <div class="row">
+      <fieldset>
+        <legend>Plan on learning</legend>
+        <p><i class="fa fa-code" aria-hidden="true"></i>Python</p>
+        <p><i class="fa fa-server" aria-hidden="true"></i>Machine Learning/Neural Networks</p>
+      </fieldset>
+      <fieldset>
+        <legend>Currently learning</legend>
+        <p><i class="fa fa-code" aria-hidden="true"></i>Rust</p>
+        <p><i class="fa fa-code" aria-hidden="true"></i>Bootstrap</p>
+        <p><i class="fa fa-gamepad" aria-hidden="true"></i>Unreal Engine</p>
+      </fieldset>
+      <fieldset>
+        <legend>Somewhat Competent</legend>
+        <p><i class="fa fa-code" aria-hidden="true"></i>Ruby/Jekyll</p>
+        <p><i class="fa fa-code" aria-hidden="true"></i>HTML/CSS/JS</p>
+        <p><i class="fa fa-gamepad" aria-hidden="true"></i>Unity3D</p>
+      </fieldset>
+      <fieldset>
+        <legend>I use these a lot</legend>
+        <p><i class="fa fa-code" aria-hidden="true"></i>C++</p>
+        <p><i class="fa fa-code" aria-hidden="true"></i>Java</p>
+        <p><i class="fa fa-linux" aria-hidden="true"></i>Linux</p>
+        <p><i class="fa fa-code-fork" aria-hidden="true"></i>Git</p>
+      </fieldset>
+    </div>
+  </div>
+  <div class="line"></div>
+</div>
