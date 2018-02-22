@@ -1,35 +1,39 @@
-<!-- Sidebar -->
-<div id="sidebar">
-	<div class="inner">
+<div class="group">
 
-		<!-- Menu -->
-		<nav id="menu">
-			<header class="major">
-				<h2>Menu</h2>
-			</header>
-			<ul>
-				<li><a href="{{ site.baseurl }}/">Home</a></li>
-				<li><a href="{{ site.baseurl }}/blog">Blog</a></li>
-		</nav>
+  <button type="button" id="sidebarExpand" class="navbar-btn">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 
-		<!-- Section -->
-		<section>
-			<header class="major">
-				<h2>Get in touch</h2>
-			</header>
-			<div class="container">
-				<ul class="contact">
-					<li class="fa-envelope-o"><a href="mailto:contact@nickolasgupton.me" target="_blank">contact@nickolasgupton.me</a></li>
-					<li class="fa-github"><a href="https://github.com/CorruptComputer">GitHub</a></li>
-					<li class="fa-comment-o">Discord: CorruptComputer#9473</li>
-				</ul>
-				
-			</div>
-		</section>
+  <nav id="sidebar">
+    <div class="sidebar-header">
+      <h3>Nickolas Gupton</h3>
 
-		<!-- Footer -->
-		<footer id="footer">
-			<p class="copyright">&copy; Nickolas Gupton. All rights reserved.</p>
-		</footer>
-	</div>
+      <button type="button" id="sidebarCollapse" class="navbar-btn">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+
+
+    <ul class="components">
+      <li>
+        <a href="{{ site.baseurl }}/index.html">Home</a>
+      </li>
+      <li>
+        <a href="{{ site.baseurl }}/blog">Blog</a>
+      </li>
+      <li>
+        <a class="contact" aria-expanded="false">Contact me:</a>
+        <ul>
+          <li><a href="mailto:contact@nickolasgupton.com"><i class="fa fa-envelope" aria-hidden="true"></i>contact@nickolasgupton.com</a></li>
+          <li><a href="https://github.com/CorruptComputer"><i class="fa fa-github" aria-hidden="true"></i>GitHub</a></li>
+          <li><a><i class="fa fa-comments" aria-hidden="true"></i>Discord: CorruptComputer#0001</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
 </div>

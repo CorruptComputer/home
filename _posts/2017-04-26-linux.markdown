@@ -7,9 +7,9 @@ image: /images/blog/GNOME desktop.png
 
 I love Linux, but there are so many different distributions. So how can I know if my current one is my favorite if I don't try them all? Well I hopped distros quite often, starting with [Mint 17](https://www.linuxmint.com) a couple years ago. After awhile I got tired of some packages being more out of date than other distros, so I moved to Fedora 25 and loved it! The only problem, finding `.rpm` packages instead of `.deb`. For the most part I had what I wanted, and what I couldn't find was usually available on [RPM Fusion](https://rpmfusion.org), but still I felt limited by Fedora's packages only including open source software. So I kept looking, with 3 things in mind:
 
-1. Packages had to be up to date.
-2. [GNOME](https://www.gnome.org) desktop environment.
-3. Have a ton of packages available, and easily installable for ones not included in the package manager.
+1) Packages had to be up to date.  
+2) [GNOME](https://www.gnome.org) desktop environment.  
+3) Have a ton of packages available, and easily installable for ones not included in the package manager.
 
 At first I came to [openSUSE](https://www.opensuse.org) Tumbleweed and GNOME wasn't default, but it was still easily changed during the installation. There were more packages available, however it still used `.rpm` packages. But I did learn something, I REALLY liked rolling releases.
 

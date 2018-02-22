@@ -1,54 +1,29 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 
-		<title>Nickolas Gupton</title>
-		<meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nickolas Gupton</title>
+  <!-- My CSS -->
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css">
+</head>
 
-		<!--[if lte IE 8]><script src="{{ site.baseurl }}/assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css" />
-		<!--[if lte IE 9]><link rel="stylesheet" href="{{ site.baseurl }}/assets/css/ie9.css" /><![endif]-->
-		<!--[if lte IE 8]><link rel="stylesheet" href="{{ site.baseurl }}/assets/css/ie8.css" /><![endif]-->
+<body>
+
+  <div class="wrapper">
+
+    <!-- Sidebar -->
+    {% include layout/sidebar.html %}
+
+    <!-- Page Content -->
+    {{ content }}
 
 
-		<!-- Google Stuff -->
-		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-		<script>
-		  (adsbygoogle = window.adsbygoogle || []).push({
-			google_ad_client: "ca-pub-4199830707169481",
-			enable_page_level_ads: true
-		  });
-		</script>
+  </div>
 
-	</head>
-	<body>
+  <!-- My JS -->
+  <script src="{{ site.baseurl }}/assets/js/backblur.min.js"></script>
+  <script src="{{ site.baseurl }}/assets/js/main.js"></script>
+</body>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
-
-				<!-- Main -->
-					<div id="main">
-						<div class="inner">
-
-							{% include layout/header.html %}
-
-							{{ content }}
-
-						</div>
-					</div>
-
-				{% include layout/sidebar.html %}
-
-			</div>
-
-		<!-- Scripts -->
-			<script src="{{ site.baseurl }}/assets/js/jquery.min.js"></script>
-			<script src="{{ site.baseurl }}/assets/js/skel.min.js"></script>
-			<script src="{{ site.baseurl }}/assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="{{ site.baseurl }}/assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="{{ site.baseurl }}/assets/js/main.js"></script>
-
-	</body>
 </html>
