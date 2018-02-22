@@ -6,21 +6,23 @@ layout: default
    <div class="bigBox">
       <h2>My blog posts:</h2>
 
-      <!-- Post list -->
-      {% for post in paginator.posts %}
+      <div class="postList">
+         <!-- Post list -->
+         {% for post in paginator.posts %}
 
-      <fieldset class="post">
-         <legend><a href="{{ site.baseurl }}{{ post.url }}">{{ post.date | date: "%B %-d, %Y" }}: {{ post.title }}</a>
-         </legend>
-         {{ post.excerpt }}
-         <a href="{{ site.baseurl }}{{ post.url }}"><button class="blogBtn">Read More</button></a>
-      </fieldset>
+         <fieldset class="post">
+            <legend><a href="{{ site.baseurl }}{{ post.url }}">{{ post.date | date: "%B %-d, %Y" }}: {{ post.title }}</a>
+            </legend>
+            {{ post.excerpt }}
+            <a href="{{ site.baseurl }}{{ post.url }}"><button class="blogBtn">Read More</button></a>
+         </fieldset>
 
-      {% unless forloop.last %}
-         <hr class="major" />
-      {% endunless %}
+         {% unless forloop.last %}
+            <hr class="major" />
+         {% endunless %}
 
-      {% endfor %}
+         {% endfor %}
+      </div>
 
       <!-- Pagination -->
       {% if paginator.total_pages > 1 %}

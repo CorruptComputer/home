@@ -59,6 +59,7 @@ a:focus {
 .group {
 	position: sticky;
 	top: 0;
+	z-index: 5;
 }
 
 #sidebar {
@@ -265,6 +266,13 @@ fieldset {
    BLOG
 ----------------------------------------------------- */
 
+.postList {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	align-items: center;
+}
+
 .post {
 	min-width: 97%;
 }
@@ -321,6 +329,7 @@ fieldset {
 	}
 	
 	#sidebarExpand {
+		margin: 5px;
 		span {
 			transform: none;
 			opacity: 1;
@@ -342,12 +351,11 @@ fieldset {
 		}
 	}
 	
-	.contentBox {
-		min-width: 60%;
-		max-width: 85%;
-	}
-	
 	fieldset {
+		max-width: 100%;
+	}
+
+	.blogImage{
 		max-width: 100%;
 	}
 }
