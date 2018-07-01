@@ -3,7 +3,7 @@ title: Nickolas Gupton
 tagline:
 description:
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://www.nickolasgupton.com" # the base hostname & protocol for your site
+url: "https://nickolas.gupton.xyz" # the base hostname & protocol for your site
 
 ## Plugins
 plugins: [jekyll-paginate]

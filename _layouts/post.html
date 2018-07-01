@@ -1,17 +1,18 @@
 ---
-layout: default
+layout: default-blog
 ---
-
-<div id="content">
-   <div class="bigBox">
-     <h2>{{ page.title }}</h2>
-	   <p>{{ page.date | date: "%B %-d, %Y" }}</p>
-
+<div class="box">
+  <h2>{{ page.title }}</h2><hr />
+  <div class="blogBox">
+      <div>
+        <p>{{ page.date | date: "%B %-d, %Y" }}</p>
+      
+        {{ content }}
+      </div>
+      
       {% if page.image %}
         <img src="{{ site.baseurl }}{{ page.image }}" alt="{{ page.title }}" class="blogImage">
       {% endif %}
-
-      {{ content }}
-
-   </div>
+    
+    </div>
 </div>

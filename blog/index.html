@@ -1,60 +1,50 @@
 ---
-layout: default
+layout: default-blog
 ---
+<div class="col">
+    <!-- Post list -->
+    {% for post in paginator.posts %}
 
-<div id="content">
-   <div class="bigBox">
-      <h2>My blog posts:</h2>
+    <div class="box">
+        <a href="{{ site.baseurl }}{{ post.url }}"><h2>{{ post.date | date: "%B %-d, %Y" }}: {{ post.title }}</h2></a><hr />
+        {{ post.excerpt }}
+        <a href="{{ site.baseurl }}{{ post.url }}"><button class="blogBtn">Read More</button></a>
 
-      <div class="postList">
-         <!-- Post list -->
-         {% for post in paginator.posts %}
+    </div>
 
-         <fieldset class="post">
-            <legend><a href="{{ site.baseurl }}{{ post.url }}">{{ post.date | date: "%B %-d, %Y" }}: {{ post.title }}</a>
-            </legend>
-            {{ post.excerpt }}
-            <a href="{{ site.baseurl }}{{ post.url }}"><button class="blogBtn">Read More</button></a>
-         </fieldset>
+    {% endfor %}
 
-         {% unless forloop.last %}
-            <hr class="major" />
-         {% endunless %}
+    <!-- Pagination -->
+    {% if paginator.total_pages > 1 %}
 
-         {% endfor %}
-      </div>
+    <div class="pagination">
 
-      <!-- Pagination -->
-      {% if paginator.total_pages > 1 %}
+    {% if paginator.previous_page %}
+        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}"><button class="blogBtn">Prev</button></a>
+    {% else %}
+        <button class="blogBtn disabled">Prev</button>
+    {% endif %}
 
-      <div class="pagination">
+    {% for page in (1..paginator.total_pages) %}
 
-         {% if paginator.previous_page %}
-            <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}"><button class="blogBtn">Prev</button></a>
-         {% else %}
-            <button class="blogBtn disabled">Prev</button>
-         {% endif %}
+        {% if page == 1 %}
+            {% assign href = site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: '/page:num', '' %}
+        {% else %}
+            {% assign href = site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page %}
+        {% endif %}
 
-         {% for page in (1..paginator.total_pages) %}
+        <a href="{{ href }}" {% if page == paginator.page %}class="active"{% endif %}><button class="blogBtn">{{ page }}</button></a>
 
-            {% if page == 1 %}
-               {% assign href = site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: '/page:num', '' %}
-            {% else %}
-               {% assign href = site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page %}
-            {% endif %}
+    {% endfor %}
 
-            <a href="{{ href }}" {% if page == paginator.page %}class="active"{% endif %}><button class="blogBtn">{{ page }}</button></a>
+    {% if paginator.next_page %}
+        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}"><button class="blogBtn">Next</button></a>
+    {% else %}
+        <button class="blogBtn disabled">Next</button>
+    {% endif %}
 
-         {% endfor %}
+    </div>
 
-         {% if paginator.next_page %}
-            <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}"><button class="blogBtn">Next</button></a>
-         {% else %}
-            <button class="blogBtn disabled">Next</button>
-         {% endif %}
+    {% endif %}
 
-      </div>
-
-      {% endif %}
-   </div>
 </div>
