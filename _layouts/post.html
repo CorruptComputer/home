@@ -1,18 +1,18 @@
 ---
 layout: default-blog
 ---
-<div class="box">
-  <h2>{{ page.title }}</h2><hr />
-  <div class="blogBox">
-      <div>
-        <p>{{ page.date | date: "%B %-d, %Y" }}</p>
-      
-        {{ content }}
-      </div>
-      
+<div class="row">
+   <div class="box">
+     <h2>{{ page.title }}</h2><hr />
+
       {% if page.image %}
-        <img src="{{ site.baseurl }}{{ page.image }}" alt="{{ page.title }}" class="blogImage">
+         <img src="{{ site.baseurl }}{{ page.image }}" alt="{{ page.title }}" class="blogImage">
       {% endif %}
-    
-    </div>
+      
+      <div>
+         <p>{{ page.date | date: "%B %-d, %Y" }}</p>
+
+         {{ content }}
+      </div>
+   </div>
 </div>

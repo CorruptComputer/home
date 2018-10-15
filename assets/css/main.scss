@@ -4,13 +4,13 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
 html,body {
-    display: flex;
-    margin: 0px;
+   display: flex;
+   margin: 0px;
 	height: 100%;
 	width: 100%;
 	background-color: #454d6a;
 	color: white;
-    font-family: 'Roboto', sans-serif;
+   font-family: 'Roboto', sans-serif;
 }
 
 /***********
@@ -18,12 +18,12 @@ html,body {
 ***********/
 
 nav {
-    display: flex;
-    flex-direction: column;
-    float: left;
-    background-color: #3a3e4b;
-    height: 100%;
-    width: 100px;
+   display: flex;
+   flex-direction: column;
+   float: left;
+   background-color: #3a3e4b;
+   height: 100%;
+   width: 100px;
 	position: fixed;
 	
 	img {
@@ -50,6 +50,22 @@ nav {
 			color: white;
 			margin: 0px;
 		}
+      
+      .monkeySpin {
+         animation-name: spin;
+         animation-duration: 1000ms;
+         animation-iteration-count: infinite;
+      }
+      
+      @keyframes spin {
+         from {
+            transform:rotate(0deg);
+         }
+         
+         to {
+            transform:rotate(360deg);
+         }
+      }
 		
 	}
 
@@ -97,31 +113,51 @@ a {
 	margin: 0px;
 }
 
+p, h4 {
+   a {
+      text-decoration: underline;
+   }
+}
+
 .box {
 	position: relative;
 	width: 100%;
 	padding: 20px;
 	margin: 10px;
 	background-color: #4d5676;
+   
+   p {
+      padding-left: 10px;
+   }
+}
+
+code {
+   font-family: Consolas;
+   background-color: #404040;
+   padding: 1px;
+   padding-left: 5px;
+   padding-right: 5px;
 }
 
 /*********
 ** Blog **
 *********/
 
-.blogBox {
-	display: flex;
-	flex-direction: row;
+.blogImage {
+   display: block;
+   width: 50%;
+   margin: 10px;
+   float: right;
 }
 
 .blogBtn {
 	background-color: #317ed4;
 	border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
+   color: white;
+   padding: 15px 32px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
 	font-size: 16px;
 	cursor: pointer;
 }
@@ -131,12 +167,7 @@ a {
 	background-color: #3a3e4b;
 }
 
-.blogImage {
-	display: block;
-	width: 40%;
-	height: 40%;
-	margin: 10px;
-}
+
 
 /******************
 ** Media Query's **
@@ -160,15 +191,29 @@ a {
 		.row {
 			flex-direction: column;
 			width: 90%;
+         
+         .blogImage {
+            display: block;
+            float: none;
+            width: 100%;
+            height: 100%;
+            margin: 10px;
+         }
 		}
+      
+      .col {
+			width: 90%;
+		}
+      
 	}
 	
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 720px) {
 	body {
 		flex-direction: column-reverse;
 		height: 100%;
+      overflow: hidden;
 	}
 
 	nav {
