@@ -4,4 +4,3 @@
 
 * [Jekyll](https://jekyllrb.com/) 
 * [Font Awesome](http://fontawesome.io/)
-* [BackBlur.js](https://github.com/Norech/BackBlur.js)
