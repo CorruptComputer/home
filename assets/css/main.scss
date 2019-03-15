@@ -150,6 +150,12 @@ code {
    float: right;
 }
 
+.blogImageInline {
+   display: block;
+   width: 50%;
+   margin: 10px;
+}
+
 .blogBtn {
 	background-color: #317ed4;
 	border: none;
@@ -199,6 +205,13 @@ code {
             height: 100%;
             margin: 10px;
          }
+		 
+		 .blogImageInline {
+		    display: block;
+		    width: 100%;
+			height: 100%;
+		    margin: 10px;
+		 }
 		}
       
       .col {
