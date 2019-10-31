@@ -9,11 +9,12 @@
       </head>
 
     <body>
-        {% include layout/sidebar-home.html %}
-
         <div class="container">
             {{ content }}
         </div>
+        
+        {% include layout/sidebar-home.html %}
+
     </body>
 
     <script src="{{ site.baseurl }}/assets/js/main.js"></script>
