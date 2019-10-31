@@ -4,13 +4,13 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
 html,body {
-   display: flex;
-   margin: 0px;
+	display: flex;
+	margin: 0px;
 	height: 100%;
 	width: 100%;
 	background-color: #454d6a;
 	color: white;
-   font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', sans-serif;
 }
 
 /***********
@@ -18,12 +18,12 @@ html,body {
 ***********/
 
 nav {
-   display: flex;
-   flex-direction: column;
-   float: left;
-   background-color: #3a3e4b;
-   height: 100%;
-   width: 100px;
+	display: flex;
+	flex-direction: column;
+	float: left;
+	background-color: #3a3e4b;
+	height: 100%;
+	width: 100px;
 	position: fixed;
 	
 	img {
@@ -32,7 +32,7 @@ nav {
 		margin: 5%;
 	}
 
-    a img {
+	a img {
 		width: 60%;
 		height: 60%;
 	}
@@ -50,22 +50,22 @@ nav {
 			color: white;
 			margin: 0px;
 		}
-      
-      .monkeySpin {
-         animation-name: spin;
-         animation-duration: 1000ms;
-         animation-iteration-count: infinite;
-      }
-      
-      @keyframes spin {
-         from {
-            transform:rotate(0deg);
-         }
-         
-         to {
-            transform:rotate(360deg);
-         }
-      }
+		
+		.monkeySpin {
+			animation-name: spin;
+			animation-duration: 1000ms;
+			animation-iteration-count: infinite;
+		}
+		
+		@keyframes spin {
+			from {
+				transform:rotate(0deg);
+			}
+			
+			to {
+				transform:rotate(360deg);
+			}
+		}
 		
 	}
 
@@ -114,9 +114,9 @@ a {
 }
 
 p, h4 {
-   a {
-      text-decoration: underline;
-   }
+	a {
+		text-decoration: underline;
+	}
 }
 
 .box {
@@ -125,18 +125,18 @@ p, h4 {
 	padding: 20px;
 	margin: 10px;
 	background-color: #4d5676;
-   
-   p {
-      padding-left: 10px;
-   }
+	
+	p {
+		padding-left: 10px;
+	}
 }
 
 code {
-   font-family: Consolas;
-   background-color: #404040;
-   padding: 1px;
-   padding-left: 5px;
-   padding-right: 5px;
+	font-family: Consolas;
+	background-color: #404040;
+	padding: 1px;
+	padding-left: 5px;
+	padding-right: 5px;
 }
 
 .skills {
@@ -163,26 +163,26 @@ code {
 *********/
 
 .blogImage {
-   display: block;
-   width: 50%;
-   margin: 10px;
-   float: right;
+	display: block;
+	width: 50%;
+	margin: 10px;
+	float: right;
 }
 
 .blogImageInline {
-   display: block;
-   width: 50%;
-   margin: 10px;
+	display: block;
+	width: 50%;
+	margin: 10px;
 }
 
 .blogBtn {
 	background-color: #317ed4;
 	border: none;
-   color: white;
-   padding: 15px 32px;
-   text-align: center;
-   text-decoration: none;
-   display: inline-block;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
 	font-size: 16px;
 	cursor: pointer;
 }
@@ -192,15 +192,13 @@ code {
 	background-color: #3a3e4b;
 }
 
-
-
 /******************
 ** Media Query's **
 ******************/
 
 
 @media only screen and (max-width: 1024px) {
-    nav {
+	nav {
 		width: 70px;
 
 		.navSquare{
@@ -216,27 +214,27 @@ code {
 		.row {
 			flex-direction: column;
 			width: 90%;
-         
-         .blogImage {
-            display: block;
-            float: none;
-            width: 100%;
-            height: 100%;
-            margin: 10px;
-         }
+			
+			.blogImage {
+				display: block;
+				float: none;
+				width: 100%;
+				height: 100%;
+				margin: 10px;
+			}
 		 
 		 .blogImageInline {
-		    display: block;
-		    width: 100%;
+			display: block;
+			width: 100%;
 			height: 100%;
-		    margin: 10px;
+			margin: 10px;
 		 }
 		}
-      
-      .col {
+		
+		.col {
 			width: 90%;
 		}
-      
+		
 	}
 	
 }
@@ -245,7 +243,7 @@ code {
 	body {
 		flex-direction: column-reverse;
 		height: 100%;
-      overflow: hidden;
+		overflow: hidden;
 	}
 
 	nav {
@@ -278,4 +276,3 @@ code {
 		background-color: #4d5676;
 	}
 }
-
