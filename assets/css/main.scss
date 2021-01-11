@@ -164,14 +164,14 @@ code {
 	list-style-type: none;
 	min-width: 150px;
 
-	li{
+	li:nth-child(odd){
 		margin-top: 5px;
-		width: 50%;
-		float:left;
+		width: 60%;
+		float: left;
 	}
 
 	li:nth-child(even){
-		width: 50%;
+		width: 40%;
 		float: right;
 	}
 }
