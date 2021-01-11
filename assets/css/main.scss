@@ -128,7 +128,21 @@ p, h4 {
 	width: 100%;
 	padding: 20px;
 	margin: 10px;
-	background-color: #4d5676;
+	background-color: rgb(82, 91, 122);
+	
+	// Thanks to Chris from CSS Tricks for this: https://css-tricks.com/notched-boxes/
+	--notchSize: 40px; 
+	clip-path: 
+		polygon(
+			0% var(--notchSize), 
+			var(--notchSize) 0%, 
+			0px 0%, 
+			100% 0px, 
+			100% calc(100% - var(--notchSize)), 
+			calc(100% - var(--notchSize)) 100%, 
+			0px 100%, 
+			0% 0px
+		);
 	
 	p {
 		padding-left: 10px;
@@ -189,6 +203,20 @@ code {
 	display: inline-block;
 	font-size: 16px;
 	cursor: pointer;
+
+	// Thanks to Chris from CSS Tricks for this: https://css-tricks.com/notched-boxes/
+	--notchSize: 20px; 
+	clip-path: 
+		polygon(
+			0% var(--notchSize), 
+			var(--notchSize) 0%, 
+			0px 0%, 
+			100% 0px, 
+			100% calc(100% - var(--notchSize)), 
+			calc(100% - var(--notchSize)) 100%, 
+			0px 100%, 
+			0% 0px
+		);
 }
 
 .disabled {
