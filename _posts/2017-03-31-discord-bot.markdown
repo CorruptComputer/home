@@ -2,6 +2,7 @@
 layout: post
 title:  "Digital Ocean and a Discord Bot"
 date:   2017-03-31 10:30:00
+lastmod: 2021-03-07 12:00:00
 image: /images/blog/digital ocean discord bot.png
 ---
 

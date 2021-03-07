@@ -6,7 +6,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://nickolas.gupton.xyz" # the base hostname & protocol for your site
 
 ## Plugins
-plugins: [jekyll-paginate]
+plugins: [jekyll-paginate, jekyll-tidy]
 exclude: [vendor]
 
 ## Build settings
@@ -17,3 +17,7 @@ sass:
 ## Pagination
 paginate: 4
 paginate_path: "/blog/page:num/"
+
+## Tidy
+jekyll_tidy:
+  compress_html: false

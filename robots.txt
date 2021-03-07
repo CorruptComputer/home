@@ -1,4 +1,7 @@
+---
+layout: null
+---
 User-agent: *
 Allow: /
 
-Sitemap: https://nickolas.gupton.xyz/sitemap.xml
+Sitemap: {{ site.url }}/sitemap.xml

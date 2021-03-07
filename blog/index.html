@@ -1,5 +1,7 @@
 ---
 layout: blog
+sitemap:
+  lastmod: 2021-03-07 12:00:00
 ---
 <div class="col">
     <!-- Post list -->
@@ -32,7 +34,7 @@ layout: blog
             {% assign href = site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page %}
         {% endif %}
 
-        <a href="{{ href }}" {% if page == paginator.page %}class="active"{% endif %}><button class="blogBtn">{{ page }}</button></a>
+        <a href="{{ href }}"><button class="blogBtn{% if page == paginator.page %} disabled{% endif %}">{{ page }}</button></a>
 
     {% endfor %}
 
