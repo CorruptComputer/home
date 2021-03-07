@@ -28,7 +28,7 @@ jobs:
     - name: Test the generated HTML for errors
       uses: chabad360/htmlproofer@master
       with:
-        directory: "./_site"
+        directory: "/github/jekyll_build"
     
     - name: Deploy the site
       uses: helaili/jekyll-action@master
