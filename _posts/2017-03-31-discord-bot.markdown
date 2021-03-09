@@ -3,7 +3,7 @@ layout: post
 title:  "Digital Ocean and a Discord Bot"
 date:   2017-03-31 10:30:00
 lastmod: 2021-03-07 12:00:00
-image: /images/blog/digital ocean discord bot.png
+image: /images/blog/2017-03-31-discord-bot/DigitalOceanDiscordBot.png
 ---
 
 If anyone has ever used [NadekoBot](https://github.com/Kwoth/NadekoBot), you know that its great. But you know what could make it even better? Being 24/7.

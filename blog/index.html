@@ -21,9 +21,9 @@ sitemap:
 {% for post in paginator.posts %}
     <div class="row">
         <div class="box">
-            <a href="{{ site.baseurl }}{{ post.url }}"><h2>{{ post.date | date: "%B %-d, %Y" }}: {{ post.title }}</h2></a><hr />
+            <a href="{{ site.url }}{{ post.url }}"><h2>{{ post.date | date: "%B %-d, %Y" }}: {{ post.title }}</h2></a><hr />
             {{ post.excerpt }}
-            <a href="{{ site.baseurl }}{{ post.url }}"><button class="blogBtn">Read More</button></a>
+            <a href="{{ site.url }}{{ post.url }}"><button class="blogBtn">Read More</button></a>
         </div>
     </div>
 {% endfor %}
@@ -32,7 +32,7 @@ sitemap:
 {% if paginator.total_pages > 1 %}
     <div class="pagination">
         {% if paginator.previous_page %}
-            <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}"><button class="blogBtn">Prev</button></a>
+            <a href="{{ paginator.previous_page_path | prepend: site.url | replace: '//', '/' }}"><button class="blogBtn">Prev</button></a>
         {% else %}
             <button class="blogBtn disabled">Prev</button>
         {% endif %}
@@ -40,9 +40,9 @@ sitemap:
         {% for page in (1..paginator.total_pages) %}
 
             {% if page == 1 %}
-                {% assign href = site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: '/page:num', '' %}
+                {% assign href = site.paginate_path | prepend: site.url | replace: '//', '/' | replace: '/page:num', '' %}
             {% else %}
-                {% assign href = site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page %}
+                {% assign href = site.paginate_path | prepend: site.url | replace: '//', '/' | replace: ':num', page %}
             {% endif %}
 
             <a href="{{ href }}"><button class="blogBtn{% if page == paginator.page %} disabled{% endif %}">{{ page }}</button></a>
@@ -50,7 +50,7 @@ sitemap:
         {% endfor %}
 
         {% if paginator.next_page %}
-            <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}"><button class="blogBtn">Next</button></a>
+            <a href="{{ paginator.next_page_path | prepend: site.url | replace: '//', '/' }}"><button class="blogBtn">Next</button></a>
         {% else %}
             <button class="blogBtn disabled">Next</button>
         {% endif %}

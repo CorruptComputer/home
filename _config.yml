@@ -1,8 +1,7 @@
 ## Site settings
 title: Nickolas Gupton
-tagline:
-description:
-baseurl: "" # the subpath of your site, e.g. /blog
+tagline: Nickolas Gupton's Website and Blog
+description: My home on the Internet. Discussing programming, Linux, and other tech topics.
 url: "https://nickolas.gupton.xyz" # the base hostname & protocol for your site
 
 ## Plugins
@@ -20,4 +19,4 @@ paginate_path: "/blog/page:num/"
 
 ## Tidy
 jekyll_tidy:
-  compress_html: false
+  compress_html: true

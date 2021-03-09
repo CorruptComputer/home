@@ -3,7 +3,7 @@ layout: post
 title:  "My Adventures with Linux"
 date:   2017-04-26 16:42:00
 lastmod: 2021-03-07 12:00:00
-image: /images/blog/GNOME desktop.png
+image: /images/blog/2017-04-26-linux/GNOMEdesktop.png
 ---
 
 I love Linux, but there are so many different distributions. So how can I know if my current one is my favorite if I don't try them all? Well I hopped distros quite often, starting with [Mint 17](https://www.linuxmint.com) a couple years ago. After awhile I got tired of some packages being more out of date than other distros, so I moved to Fedora 25 and loved it! The only problem, finding `.rpm` packages instead of `.deb`. For the most part I had what I wanted, and what I couldn't find was usually available on [RPM Fusion](https://rpmfusion.org), but still I felt limited by Fedora's packages only including open source software. So I kept looking, with 3 things in mind:
