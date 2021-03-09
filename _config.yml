@@ -20,3 +20,8 @@ paginate_path: "/blog/page:num/"
 ## Tidy
 jekyll_tidy:
   compress_html: false
+
+exclude:
+  - sonar-project.properties
+  - README.md
+  - .nojekyll

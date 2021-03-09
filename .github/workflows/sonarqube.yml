@@ -1,10 +1,6 @@
 name: SonarQube
 on:
-  create:
   page_build:
-  push:
-    branches:
-      - gh-pages
 
 jobs:
   sonarcloud:
