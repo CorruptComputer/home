@@ -1,5 +1,6 @@
---- 
---- 
+---
+layout: null
+---
 
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
@@ -189,7 +190,7 @@ code {
 
 .blogImageInline {
 	display: block;
-	width: 50%;
+	max-width: 50%;
 	margin: 10px;
 }
 
