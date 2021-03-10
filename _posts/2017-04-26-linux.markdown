@@ -22,5 +22,5 @@ So I went on the hunt again, and found Antergos! It was a based on Arch so it wo
 
 I have now been using Antergos for about two weeks, and have found no issues with it. The AUR packages are great and have been easy to install, and the updates are frequent yet still incredibly stable. I have a feeling that I am going to stay with Antergos because: it is fast, stable, and up to date with a rolling release cycle (or as they say "Always Fresh. Never Frozen.").
 
-EDIT 2017-04-26: Grammar, spelling, and sources.
+EDIT 2017-04-26: Grammar, spelling, and sources. <br />
 EDIT 2021-03-10: Remove Antergos link. RIP :(
