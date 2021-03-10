@@ -22,6 +22,4 @@ jekyll_tidy:
   compress_html: false
 
 exclude:
-  - sonar-project.properties
   - README.md
-  - .nojekyll
