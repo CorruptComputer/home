@@ -31,4 +31,4 @@ jobs:
         uses: chabad360/htmlproofer@master
         with:
           directory: "/home/runner/work/CorruptComputer.GitHub.io/CorruptComputer.GitHub.io"
-          arguments: --http_status_ignore=[999,403]
+          arguments: --http_status_ignore="403,999"
