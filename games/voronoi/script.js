@@ -72,6 +72,10 @@ function updateVoronoiDiagram() {
 }
 
 function addPoint(ev) {
+    if (generatingPoints.length >= 10) {
+        generatingPoints = [];
+    }
+
     generatingPoints.push(getPointFromEvent(ev));
     updateVoronoiDiagram();
 }
