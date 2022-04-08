@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
    let currentURL = window.location.toString();
    
    // I can feel my sanity slipping into the regex abyss
-   let urlRegex = /^http[s]{0,1}:\/\/.+\/[\d]{4}\/[\d]{2}\/[\d]{2}\/.+$/;
+   let urlRegex = /^http[s]?:\/\/.+\/[\d]{4}\/[\d]{2}\/[\d]{2}\/.+$/;
    
    if (currentURL.includes('/blog') || currentURL.match(urlRegex) !== null) {
       blogButton.classList.add('selected');

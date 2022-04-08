@@ -3,5 +3,4 @@
 ## Built With
 
 * [Jekyll](https://jekyllrb.com/) 
-* [Font Awesome](http://fontawesome.io/)
 * [Utterances](https://github.com/utterance/utterances)
