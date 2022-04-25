@@ -20,7 +20,7 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-gems-
     - name: Build and deploy the site
-      uses: helaili/jekyll-action@2
+      uses: helaili/jekyll-action@v2
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         target_branch: deploy
