@@ -1,5 +1,10 @@
 'use strict';
 document.addEventListener('DOMContentLoaded', function () {
+
+   if (window.location.hostname !== "nickolas.gupton.xyz"){
+      window.top.location.href = 'https://nickolas.gupton.xyz';
+   }
+
    let homeButton = document.querySelector('#homeButton');
    let blogButton = document.querySelector('#blogButton');
    let currentURL = window.location.toString();
