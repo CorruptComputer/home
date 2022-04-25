@@ -12,6 +12,9 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
+      with:
+          ref: main
+          fetch-depth: 0
     - name: Cache
       uses: actions/cache@v3
       with:
@@ -24,7 +27,7 @@ jobs:
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         target_branch: deploy
-        keep_history: true
+        keep_history: false
 
   sonarcloud:
     needs: buildDeploy
