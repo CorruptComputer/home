@@ -27,7 +27,7 @@ jobs:
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         target_branch: deploy
-        keep_history: false
+        keep_history: true
 
   sonarcloud:
     needs: buildDeploy
