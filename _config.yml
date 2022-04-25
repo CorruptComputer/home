@@ -2,7 +2,7 @@
 title: Nickolas Gupton
 tagline: Nickolas Gupton's Website and Blog
 description: My home on the Internet. Discussing programming, Linux, and other tech topics.
-url: "https://nickolas.gupton.xyz" # the base hostname & protocol for your site
+url: "https://nickolas.gupton.xyz"
 
 ## Plugins
 plugins: [jekyll-paginate, jekyll-tidy]
