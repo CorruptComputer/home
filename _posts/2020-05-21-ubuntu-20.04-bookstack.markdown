@@ -1,8 +1,9 @@
 ---
 layout: post
 title:  "Installing BookStack on Ubuntu Server 20.04 with SSL"
+excerpt: "BookStack is a free and open source Wiki software."
 date:   2020-05-21 11:00:00
-lastmod: 2021-03-07 12:00:00
+lastmod: 2022-04-25 12:00:00
 ---
 
 [BookStack](https://www.bookstackapp.com/) is a free and open source Wiki software. Its powerful markdown editor and ease of use has made it a popular alternative to software such as [DokuWiki](https://www.dokuwiki.org/DokuWiki) and [Wiki.js](https://wiki.js.org/). It is also very easy to setup and get running. In this article I will show you how to install and configure BookStack to work on Ubuntu Server 20.04 with an SSL certificate from LetsEncrypt.

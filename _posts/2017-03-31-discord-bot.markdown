@@ -1,8 +1,9 @@
 ---
 layout: post
 title:  "Digital Ocean and a Discord Bot"
+excerpt: "If anyone has ever used NadekoBot, you know that its great. But you know what could make it even better? Being 24/7."
 date:   2017-03-31 10:30:00
-lastmod: 2021-03-07 12:00:00
+lastmod: 2022-04-25 12:00:00
 image: /images/blog/2017-03-31-discord-bot/DigitalOceanDiscordBot.png
 ---
 

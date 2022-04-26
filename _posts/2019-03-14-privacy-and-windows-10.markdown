@@ -1,8 +1,9 @@
 ---
 layout: post
 title:  "Privacy and Windows 10"
+excerpt: "Windows 10 has been a nightmare from a privacy perspective, however it doesn't have to be."
 date:   2019-03-14 14:00:00
-lastmod: 2021-03-07 12:00:00
+lastmod: 2022-04-25 12:00:00
 ---
 
 Windows 10 has been a nightmare from a privacy perspective, however it doesn't have to be. There are some group policies which can be set in order to limit the amount of data Microsoft collects and some to even outright disable it. There is also the issue of advertisements, in an operating system which you pay for (or any paid software for that matter) having advertisements in my opinion is unacceptable. Not only is this a possible breach of privacy, with most ads having trackers in order to deliver more "relevant" ads to you, but this also makes it less appealing to use and less user friendly.

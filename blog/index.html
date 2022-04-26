@@ -1,7 +1,7 @@
 ---
 layout: default
 sitemap:
-  lastmod: 2021-03-09 09:00:00
+  lastmod: 2022-04-25 12:00:00
 ---
 
 {% if paginator.page == 1 %}
@@ -10,7 +10,14 @@ sitemap:
             <h2>About my blog</h2><hr />
             <p>
                 I mostly look at programming, Linux, and other tech topics.
-                Thanks for checking it out! 
+                Thanks for checking out my internet ramblings.
+            </p>
+        </div>
+        <div class="box">
+            <h2>Comments</h2><hr />
+            <p>
+                This blog has comments powered by <a href="https://github.com/utterance/utterances" target="_blank" rel="noopener">Utterances</a>.
+                Utterances uses GitHub Issues as its backend storage for the comments, so in order to contribute you'll need to log in with your GitHub account.
             </p>
         </div>
     </div>
@@ -22,7 +29,7 @@ sitemap:
     <div class="row">
         <div class="box">
             <a href="{{ post.url }}"><h2>{{ post.date | date: "%B %-d, %Y" }}: {{ post.title }}</h2></a><hr />
-            {{ post.excerpt }}
+            <p>{{ post.excerpt }}</p>
             <a href="{{ post.url }}"><button class="blogBtn">Read More</button></a>
         </div>
     </div>

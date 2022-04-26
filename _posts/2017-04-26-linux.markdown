@@ -1,8 +1,9 @@
 ---
 layout: post
 title:  "My Adventures with Linux"
+excerpt: "I love Linux, but there are so many different distributions. So how can I know if my current one is my favorite if I don't try them all?"
 date:   2017-04-26 16:42:00
-lastmod: 2021-03-10 12:00:00
+lastmod: 2022-04-25 12:00:00
 image: /images/blog/2017-04-26-linux/GNOMEdesktop.png
 ---
 

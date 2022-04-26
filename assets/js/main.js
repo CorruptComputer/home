@@ -1,10 +1,11 @@
 'use strict';
+
+// Redirect from prod Cloudflare Pages domain, excludes pages test deployments and local testing
+if (window.location.hostname === "nickolasgupton.pages.dev"){
+   window.top.location.href = 'https://nickolas.gupton.xyz';
+}
+
 document.addEventListener('DOMContentLoaded', function () {
-
-   if (window.location.hostname !== "nickolas.gupton.xyz"){
-      window.top.location.href = 'https://nickolas.gupton.xyz';
-   }
-
    let homeButton = document.querySelector('#homeButton');
    let blogButton = document.querySelector('#blogButton');
    let currentURL = window.location.toString();

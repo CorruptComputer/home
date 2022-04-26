@@ -1,8 +1,9 @@
 ---
 layout: post
 title:  "Removing Steam Games from Control Panel and Apps list on Windows"
+excerpt: "It might just be me, but I find these to be absolutely useless and actually get in the way of actually finding the apps that I want to remove."
 date:   2021-03-05 23:00:00
-lastmod: 2021-03-07 12:00:00
+lastmod: 2022-04-25 12:00:00
 ---
 
 It might just be me, but I find these to be absolutely useless and actually get in the way of actually finding the apps that I want to remove. 
