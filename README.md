@@ -1,4 +1,4 @@
-# My Website [![Build Status](https://travis-ci.org/CorruptComputer/CorruptComputer.GitHub.io.svg?branch=master)](https://travis-ci.org/CorruptComputer/CorruptComputer.GitHub.io)
+# My Website [![Build, deploy, and scan](https://github.com/CorruptComputer/home/actions/workflows/build-deploy-scan.yml/badge.svg?branch=main)](https://github.com/CorruptComputer/home/actions/workflows/build-deploy-scan.yml)
 
 ## Built With
 
