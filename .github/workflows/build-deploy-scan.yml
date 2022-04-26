@@ -43,18 +43,3 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-
-  htmlproofer:
-    needs: buildDeploy
-    name: HTMLProofer
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          ref: deploy
-          fetch-depth: 0
-      - name: Test the generated HTML for errors
-        uses: chabad360/htmlproofer@master
-        with:
-          directory: "/home/runner/work/home/home"
-          arguments: --http_status_ignore="403,999"
