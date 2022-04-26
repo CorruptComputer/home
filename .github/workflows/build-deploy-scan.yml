@@ -1,4 +1,4 @@
-name: Build, deploy, and scan the deployed site for errors
+name: Build, deploy, and scan
 
 on:
   push:
@@ -29,9 +29,9 @@ jobs:
         target_branch: deploy
         keep_history: true
 
-  sonarcloud:
+  scan:
     needs: buildDeploy
-    name: SonarCloud Scan
+    name: Scan
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2.4.0
