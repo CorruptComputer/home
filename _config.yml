@@ -3,6 +3,7 @@ title: Nickolas Gupton
 tagline: Nickolas Gupton's Website and Blog
 description: My home on the Internet. Discussing programming, Linux, and other tech topics.
 url: "https://nickolas.gupton.xyz"
+permalink: /:year/:month/:day/:title
 
 ## Plugins
 plugins: [jekyll-paginate, jekyll-tidy]
