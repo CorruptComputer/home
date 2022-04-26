@@ -1,7 +1,8 @@
 ---
-layout: null
+layout: none
 ---
 User-agent: *
-Allow: /
+Allow: *
+Disallow: /404.html
 
 Sitemap: {{ site.url }}/sitemap.xml
