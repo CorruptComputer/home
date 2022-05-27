@@ -13,8 +13,8 @@ So lets start with the advertisements, how can you disable them? If you have Win
 ![Group Policy 1](/images/blog/2019-03-14-privacy-and-windows-10/WindowsPrivacy1.png "Computer Configuration > Administrative Templates > Windows Components > Cloud Content"){:.blogImageInline}
 
 Enable the following policies:
-<pre><code class="language-html">Computer Configuration > Administrative Templates > Windows Components > Cloud Content > Do not show Windows tips;
-Computer Configuration > Administrative Templates > Windows Components > Cloud Content > Turn off Microsoft consumer experiences;</code></pre>
+<pre><code class="language-html">Computer Configuration &gt; Administrative Templates &gt; Windows Components &gt; Cloud Content &gt; Do not show Windows tips;
+Computer Configuration &gt; Administrative Templates &gt; Windows Components &gt; Cloud Content &gt; Turn off Microsoft consumer experiences;</code></pre>
 
 <hr />
 
@@ -24,7 +24,7 @@ This one is just a personal opinion, but I also do not want the tips which are p
 
 Disable the following policy:
 
-<pre><code class="language-html">Computer Configuration > Administrative Templates > Control Panel > Allow Online Tips;</code></pre>
+<pre><code class="language-html">Computer Configuration &gt; Administrative Templates &gt; Control Panel &gt; Allow Online Tips;</code></pre>
 
 <hr />
 
@@ -39,7 +39,7 @@ In regards to privacy there are a few different places where policy must be set,
 
 Set the following policy to your desired level of telemetry:
 
-<pre><code class="language-html">Computer Configuration > Administrative Templates > Windows Components > Data Collection and Preview Builds > Allow Telemetry;</code></pre>
+<pre><code class="language-html">Computer Configuration &gt; Administrative Templates &gt; Windows Components &gt; Data Collection and Preview Builds &gt; Allow Telemetry;</code></pre>
 
 <hr />
 
@@ -49,7 +49,7 @@ Another possibility is the disablement of application telemetry, in my experienc
 
 Enable the following policy:
 
-<pre><code class="language-html">Computer Configuration > Administrative Templates > Windows Components > Application Compatibility > Turn off Application Telemetry;</code></pre>
+<pre><code class="language-html">Computer Configuration &gt; Administrative Templates &gt; Windows Components &gt; Application Compatibility &gt; Turn off Application Telemetry;</code></pre>
 
 <hr />
 
@@ -59,12 +59,12 @@ The last place which I edit for this would be in regards to Cortana, as it is no
 
 Disable the following policies:
 
-<pre><code class="language-html">Computer Configuration > Administrative Templates > Windows Components > Search > Allow Cortana;
-Computer Configuration > Administrative Templates > Windows Components > Search > Allow Cortana above lock screen;</code></pre>
+<pre><code class="language-html">Computer Configuration &gt; Administrative Templates &gt; Windows Components &gt; Search &gt; Allow Cortana;
+Computer Configuration &gt; Administrative Templates &gt; Windows Components &gt; Search &gt; Allow Cortana above lock screen;</code></pre>
 
 Enable this last policy:
 
-<pre><code class="language-html">Computer Configuration > Administrative Templates > Windows Components > Search > Don't search the web or display web results in Search;</code></pre>
+<pre><code class="language-html">Computer Configuration &gt; Administrative Templates &gt; Windows Components &gt; Search &gt; Don't search the web or display web results in Search;</code></pre>
 
 <hr />
 
