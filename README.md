@@ -2,6 +2,7 @@
 
 ## Built With
 
-* [Jekyll](https://jekyllrb.com/) 
-* [Utterances](https://github.com/utterance/utterances)
-* [Cloudflare](https://www.cloudflare.com)
+- [Jekyll](https://jekyllrb.com/) 
+- [Utterances](https://github.com/utterance/utterances)
+- [Cloudflare](https://www.cloudflare.com)
+- [highlight.js](https://github.com/highlightjs/highlight.js) for syntax highlighting in code blocks

@@ -3,16 +3,24 @@ layout: post
 title:  "Installing BookStack on Ubuntu Server 20.04 with SSL"
 excerpt: "BookStack is a free and open source Wiki software."
 date:   2020-05-21 11:00:00
-lastmod: 2022-04-25 12:00:00
+lastmod: 2022-05-26 23:00:00
 ---
 
 [BookStack](https://www.bookstackapp.com/) is a free and open source Wiki software. Its powerful markdown editor and ease of use has made it a popular alternative to software such as [DokuWiki](https://www.dokuwiki.org/DokuWiki) and [Wiki.js](https://wiki.js.org/). It is also very easy to setup and get running. In this article I will show you how to install and configure BookStack to work on Ubuntu Server 20.04 with an SSL certificate from LetsEncrypt.
 
 The first thing you need to do is install Ubuntu Server 20.04 on any platform of your choice. Personally I use [Linode](https://www.linode.com/), however any provider or even self-hosting would work just fine for this.
 
-Once that is complete we can move onto installing BookStack itself, this is very easy and these instructions are [directly from their Wiki](https://www.bookstackapp.com/docs/admin/installation/#ubuntu-2004).
+Once that is complete we can move onto installing BookStack itself, this is very easy and these couple of instructions are [directly from their Wiki](https://www.bookstackapp.com/docs/admin/installation/#ubuntu-2004).
 
-<script src="https://gist.github.com/CorruptComputer/83206999a8d98bac6bcdcb0fef8f9632.js"></script>
+<pre><code class="language-bash"># Download the script
+wget https://raw.githubusercontent.com/BookStackApp/devops/master/scripts/installation-ubuntu-20.04.sh
+
+# Make it executable
+chmod a+x installation-ubuntu-20.04.sh
+
+# Run the script with admin permissions
+sudo ./installation-ubuntu-20.04.sh
+</code></pre>
 
 Enter your domain name that the server will be hosted at when prompted.
 
@@ -20,15 +28,40 @@ Once that completes you should be able to access BookStack in the browser. With 
 
 First thing to do is install certbot and get the certificate generated.
 
-<script src="https://gist.github.com/CorruptComputer/33b7441b6d020c074c3954979bd98886.js"></script>
+<pre><code class="language-bash">apt install certbot
+
+certbot certonly --webroot --agree-tos --email &lt;your email addreess&gt; -d &lt;your domain&gt; --webroot-path /var/www/bookstack/public
+
+# Finally add the following to your crontab
+# 0 0 * * * certbot renew</code></pre>
 
 Once that is done we can configure Apache to use the certificate for Bookstack.
 
-This is what the file should look like before: <script src="https://gist.github.com/CorruptComputer/31290e6174dd5d0f497b37f802c46987.js"></script>
+This is what the file should look like before:
 
-This is after making the required changes: (the only changes required happen above line 10) <script src="https://gist.github.com/CorruptComputer/10724d22cc8b9b8be2ee4830a38016b1.js"></script>
+<pre><code class="language-apacheconf">&lt;VirtualHost *:80&gt;
+    ServerName &lt;your domain name&gt;
 
-Finally you need to enable SSL on Apache2 and restart the service: <script src="https://gist.github.com/CorruptComputer/36ece391cb4ab83767971bae4b1059ee.js"></script>
+...</code></pre>
+
+This is after making the required changes: (the only changes required happen above line 10) 
+<pre><code class="language-apacheconf">&lt;VirtualHost *:80&gt;
+    ServerName &lt;your domain name&gt;
+    Redirect permanent / https://&lt;your domain name&gt;/
+&lt;/VirtualHost&gt;
+
+&lt;VirtualHost *:443&gt;
+    SSLEngine On
+    SSLCertificateFile /etc/letsencrypt/live/&lt;your domain name&gt;/fullchain.pem
+    SSLCertificateKeyFile /etc/letsencrypt/live/&lt;your domain name&gt;/privkey.pem
+    ServerName &lt;your domain name&gt;
+                                                                                               
+...</code></pre>
+
+Finally you need to enable SSL on Apache2 and restart the service: 
+<pre><code class="language-bash">a2enmod ssl
+
+systemctl restart apache2.service</code></pre>
 
 Aaaaaaaand just like that you're done! Its a fairly simple setup, and below you can find some extra steps for afterwards to help keep it secure.
 

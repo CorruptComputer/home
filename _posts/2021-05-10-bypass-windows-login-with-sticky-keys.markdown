@@ -3,7 +3,7 @@ layout: post
 title:  "Bypass Windows login with Sticky Keys"
 excerpt: "I have known about this vulnerability for years, but recently I've figured out that this exploit is not very well known."
 date:   2021-05-10 15:00:00
-lastmod: 2022-04-25 12:00:00
+lastmod: 2021-05-10 15:00:00
 ---
 
 I have known about this vulnerability for years, but recently I've figured out that this exploit is not very well known. In this blog post I'll show you how you can do it and what you can do to protect yourself from this.

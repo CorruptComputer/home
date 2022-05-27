@@ -3,7 +3,7 @@ layout: post
 title:  "Removing Steam Games from Control Panel and Apps list on Windows"
 excerpt: "It might just be me, but I find these to be absolutely useless and actually get in the way of actually finding the apps that I want to remove."
 date:   2021-03-05 23:00:00
-lastmod: 2022-04-25 12:00:00
+lastmod: 2022-05-26 23:00:00
 ---
 
 It might just be me, but I find these to be absolutely useless and actually get in the way of actually finding the apps that I want to remove. 
@@ -13,7 +13,23 @@ If you're like me and have almost 60 games installed it can become almost imposs
 Thankfully though there is a simple way to remove these from the list using PowerShell.
 
 You can run the following PowerShell script (as Admin):
-<script src="https://gist.github.com/CorruptComputer/731249641a93bbbd38b9a22dfd6d70e6.js"></script>
+<pre><code class="language-powershell">$counter = 0;
+
+foreach ($steamGame in (reg query HKLM\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall | findstr /C:"Steam App")) {
+    reg delete $steamGame /f;
+    $counter += 1;
+}
+
+foreach ($steamGame in (reg query HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall | findstr /C:"Steam App")) {
+    reg delete $steamGame /f;
+    $counter += 1;
+}
+
+if ($counter -NE 0) {
+    Write-Host ("Removed " + $counter + " games from Control Panel and Apps list.");
+} else {
+    Write-Host ("No games found.");
+}</code></pre>
 
 The output should look something like this for you:
 ![Steam Games Image 1](/images/blog/2021-03-05-remove-steam-games-from-control-panel/SteamGames1.png "Steam Games Image 1"){:.blogImageInline}
