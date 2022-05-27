@@ -48,12 +48,12 @@ Create a new Trigger to have it run when you'd like. Personally I have it set to
 ![Steam Games Image 4](/images/blog/2021-03-05-remove-steam-games-from-control-panel/SteamGames4.png "Steam Games Image 4"){:.blogImageInline}
 
 Next create the action to run:
-- Program/Script: `C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe`
-- Add arguments: `-ExecutionPolicy Bypass -File "C:\[path to your file]\Remove-Steam-Games-From-Control-Panel.ps1"`
-- Start in: `C:\[path to your file]`
+- Program/Script: <inline-code>C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe</inline-code>
+- Add arguments: <inline-code>-ExecutionPolicy Bypass -File "C:\[path to your file]\Remove-Steam-Games-From-Control-Panel.ps1"</inline-code>
+- Start in: <inline-code>C:\[path to your file]</inline-code>
 ![Steam Games Image 5](/images/blog/2021-03-05-remove-steam-games-from-control-panel/SteamGames5.png "Steam Games Image 5"){:.blogImageInline}
 
 Aaaaaaand you're done!
 
 Now your Control Panel and Apps list will be a bit cleaner and easier to find stuff in. 
-If you want you can also check out my other guide on [how to make your install of Windows a bit more privacy friendly]({{ site.url }}/2019/03/14/privacy-and-windows-10.html) than it would be out of the box.
+If you want you can also check out my other guide on [how to make your install of Windows a bit more privacy friendly]({{ site.url }}/2019/03/14/privacy-and-windows-10) than it would be out of the box.

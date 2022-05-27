@@ -67,6 +67,6 @@ Aaaaaaaand just like that you're done! Its a fairly simple setup, and below you 
 
 1. Change the admin users password and email address.
 2. [Setup SMTP](https://www.bookstackapp.com/docs/admin/email-config/) for password resets.
-3. Add `SESSION_SECURE_COOKIE=true` to `/var/www/bookstack/.env` so cookies are only delivered over SSL.
+3. Add <inline-code>SESSION_SECURE_COOKIE=true</inline-code> to <inline-code>/var/www/bookstack/.env</inline-code> so cookies are only delivered over SSL.
 4. Setup UFW to block SSH from un-trusted IP addresses.
 5. Setup fail2ban to block brute force attacks from logging into your server.
