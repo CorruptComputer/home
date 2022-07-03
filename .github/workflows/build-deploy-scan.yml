@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    name: Build
+    name: Build and scan
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -17,18 +17,9 @@ jobs:
         docker run \
         -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
         jekyll/builder:latest /bin/bash -c "chmod -R 777 /srv/jekyll && jekyll build --future"
-
-  scan:
-    needs: build
-    name: Scan
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2.4.0
-        with:
-          ref: deploy
-          fetch-depth: 0
-      - name: SonarCloud Scan
+    - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      
