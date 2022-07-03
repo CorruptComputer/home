@@ -5,23 +5,21 @@ if (window.location.hostname === "nickolasgupton.pages.dev"){
    window.top.location.href = 'https://nickolas.gupton.xyz';
 }
 
+const homeButton = document.querySelector('#homeButton');
+const blogButton = document.querySelector('#blogButton');
+const monkey = document.querySelector('#monkey');
+
+const datePathRegex = new RegExp('/[0-9]{4}/[0-9]{2}/[0-9]{2}/');
+const { pathname } = location;
+
 document.addEventListener('DOMContentLoaded', function () {
-   let homeButton = document.querySelector('#homeButton');
-   let blogButton = document.querySelector('#blogButton');
-   let currentURL = window.location.toString();
-   
-   // I can feel my sanity slipping into the regex abyss
-   let urlRegex = /^http[s]?:\/\/.+\/[\d]{4}\/[\d]{2}\/[\d]{2}\/.+$/;
-   
-   if (currentURL.includes('/blog') || currentURL.match(urlRegex) !== null) {
+   if (pathname.includes('/blog/') || datePathRegex.test(pathname)) {
       blogButton.classList.add('selected');
    } else {
       homeButton.classList.add('selected');
    }
    
    let spinning = false;
-   let monkey = document.querySelector('#monkey');
-   
    monkey.addEventListener('click', function () {
       if (!spinning) {
          spinning = true;
