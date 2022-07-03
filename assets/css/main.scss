@@ -150,14 +150,6 @@ p, h4 {
 	}
 }
 
-inline-code {
-	font-family: Consolas, monospace;
-	background-color: #404040;
-	padding: 1px;
-	padding-left: 5px;
-	padding-right: 5px;
-}
-
 .skills {
 	margin-top: 0;
 	margin-bottom: 0;
@@ -223,6 +215,13 @@ inline-code {
 .disabled {
 	cursor: default;
 	background-color: #3a3e4b;
+}
+
+code {
+	background-color: #404040;
+	padding: 1px;
+	padding-left: 5px;
+	padding-right: 5px;
 }
 
 /******************

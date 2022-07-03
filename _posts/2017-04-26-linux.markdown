@@ -3,21 +3,21 @@ layout: post
 title:  "My Adventures with Linux"
 excerpt: "I love Linux, but there are so many different distributions. So how can I know if my current one is my favorite if I don't try them all?"
 date:   2017-04-26 16:42:00
-lastmod: 2022-05-26 23:00:00
+lastmod: 2022-07-02 23:00:00
 image: /images/blog/2017-04-26-linux/GNOMEdesktop.png
 ---
 
-I love Linux, but there are so many different distributions. So how can I know if my current one is my favorite if I don't try them all? Well I hopped distros quite often, starting with [Mint 17](https://www.linuxmint.com) a couple years ago. After awhile I got tired of some packages being more out of date than other distros, so I moved to Fedora 25 and loved it! The only problem, finding <inline-code>.rpm</inline-code> packages instead of <inline-code>.deb</inline-code>. For the most part I had what I wanted, and what I couldn't find was usually available on [RPM Fusion](https://rpmfusion.org), but still I felt limited by Fedora's packages only including open source software. So I kept looking, with 3 things in mind:
+I love Linux, but there are so many different distributions. So how can I know if my current one is my favorite if I don't try them all? Well I hopped distros quite often, starting with [Mint 17](https://www.linuxmint.com) a couple years ago. After awhile I got tired of some packages being more out of date than other distros, so I moved to Fedora 25 and loved it! The only problem, finding <code>.rpm</code> packages instead of <code>.deb</code>. For the most part I had what I wanted, and what I couldn't find was usually available on [RPM Fusion](https://rpmfusion.org), but still I felt limited by Fedora's packages only including open source software. So I kept looking, with 3 things in mind:
 
 1) Packages had to be up to date.  
 2) [GNOME](https://www.gnome.org) desktop environment.  
 3) Have a ton of packages available, and easily installable for ones not included in the package manager.
 
-At first I came to [openSUSE](https://www.opensuse.org) Tumbleweed and GNOME wasn't default, but it was still easily changed during the installation. There were more packages available, however it still used <inline-code>.rpm</inline-code> packages. But I did learn something, I REALLY liked rolling releases.
+At first I came to [openSUSE](https://www.opensuse.org) Tumbleweed and GNOME wasn't default, but it was still easily changed during the installation. There were more packages available, however it still used <code>.rpm</code> packages. But I did learn something, I REALLY liked rolling releases.
 
-So I started looking for other rolling release distros and came across Arch. I had known about Arch for awhile however I had never really tried it as I never really considered myself as good enough to get it setup. But I just said what the hell, tried it, and failed. I got my internet working, GNOME installed, and everything seemed well until I tried to open the GNOME terminal. It kept crashing when I tried to open it, and switching to <inline-code>tty2</inline-code> would cause GNOME to crash and reset the x-server, putting me back into my GNOME login screen.
+So I started looking for other rolling release distros and came across Arch. I had known about Arch for awhile however I had never really tried it as I never really considered myself as good enough to get it setup. But I just said what the hell, tried it, and failed. I got my internet working, GNOME installed, and everything seemed well until I tried to open the GNOME terminal. It kept crashing when I tried to open it, and switching to <code>tty2</code> would cause GNOME to crash and reset the x-server, putting me back into my GNOME login screen.
 
-By this point I decided maybe Arch wasn't for me, and just saw that [Ubuntu 17.04](https://www.ubuntu.com) had just released. So I decided to give it a try because with it just releasing the packages would be up to date, [Ubuntu GNOME](https://ubuntugnome.org) is an official flavor, and Ubuntu usually has the most support for packages. I got it installed and working but something still seemed lacking, I would run <inline-code>sudo apt update</inline-code> and there would be none. I missed the rolling releases.
+By this point I decided maybe Arch wasn't for me, and just saw that [Ubuntu 17.04](https://www.ubuntu.com) had just released. So I decided to give it a try because with it just releasing the packages would be up to date, [Ubuntu GNOME](https://ubuntugnome.org) is an official flavor, and Ubuntu usually has the most support for packages. I got it installed and working but something still seemed lacking, I would run <code>sudo apt update</code> and there would be none. I missed the rolling releases.
 
 So I went on the hunt again, and found Antergos! It was a based on Arch so it would be up to date and rolling release, you can select any of the major desktop environments when you install, and I would have access to the [Arch User Repository](https://wiki.archlinux.org/index.php/Arch_User_Repository) which has just about every package you could ever need. This also had a few advantages over Arch, I knew that GNOME and other programs would work out of the box and unlike its competitor [Manjaro](https://manjaro.org) it still uses Arch's repositories. Which means that Antergos is basically just an easy Arch installer.
 

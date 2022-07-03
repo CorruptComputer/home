@@ -3,7 +3,7 @@ layout: post
 title:  "Bypass Windows login with Sticky Keys"
 excerpt: "I have known about this vulnerability for years, but recently I've figured out that this exploit is not very well known."
 date:   2021-05-10 15:00:00
-lastmod: 2022-05-26 23:00:00
+lastmod: 2022-07-02 23:00:00
 ---
 
 I have known about this vulnerability for years, but recently I've figured out that this exploit is not very well known. In this blog post I'll show you how you can do it and what you can do to protect yourself from this.
@@ -39,11 +39,11 @@ Next you need to click on 'Troubleshoot' and finally on 'Command Prompt'.
 
 Next you'll need to figure out which drive to use, start by trying C, then D, then E, etc. Until you find one that has the 'Windows' directory on it. You usually won't have to go any higher than D, but if you have a lot of partitions or drives in your PC this could take a few more tries.
 
-You can do this with the <inline-code>&lt;drive letter&gt;:</inline-code> and <inline-code>dir</inline-code> commands like so:
+You can do this with the <code>&lt;drive letter&gt;:</code> and <code>dir</code> commands like so:
 
 ![Find Windows](/images/blog/2021-05-10-bypass-windows-login-with-sticky-keys/FindWindows.png "Find Windows"){:.blogImageInline}
 
-Once you've found your Windows directory, you can change directory to <inline-code>Windows\System32</inline-code>. Here we need to do 2 things, first we need to make a backup if our <inline-code>sethc.exe</inline-code> (Sticky Keys). Then we need to replace the original <inline-code>sethc.exe</inline-code> with a copy of <inline-code>cmd.exe</inline-code> (Command Prompt).
+Once you've found your Windows directory, you can change directory to <code>Windows\System32</code>. Here we need to do 2 things, first we need to make a backup if our <code>sethc.exe</code> (Sticky Keys). Then we need to replace the original <code>sethc.exe</code> with a copy of <code>cmd.exe</code> (Command Prompt).
 
 ![Backup and Replace Sticky Keys](/images/blog/2021-05-10-bypass-windows-login-with-sticky-keys/BackupAndReplaceStickyKeys.png "Backup and Replace Sticky Keys"){:.blogImageInline}
 
@@ -61,7 +61,7 @@ From here you can either enable the Administrator account or reset your own pass
 
 The first and last command are the most important here, first you need to know your username, and if yours has a space in it like mine does you will need to put it in quotes for the last command. The 'YourPassword' I add there is the password you want to set for your account, this can be whatever you'd like. Once you set the password you can login to your account now! But wait, we are not done, still a couple cleanup items to do. Once you know your password and you're back into your account you'll need to undo the change to your sticky keys. We can do this a few different ways, but the easiest in my opinion is to just let Windows do it.
 
-Open up a Command Prompt as admin and delete the <inline-code>sethc.exe</inline-code> we just created a few minutes ago. Next you'll notice that we can't simply rename our <inline-code>sethc.exe.backup</inline-code> we created back to <inline-code>sethc.exe</inline-code>. But no problem, we can just use the System File Checker to do this for us. 
+Open up a Command Prompt as admin and delete the <code>sethc.exe</code> we just created a few minutes ago. Next you'll notice that we can't simply rename our <code>sethc.exe.backup</code> we created back to <code>sethc.exe</code>. But no problem, we can just use the System File Checker to do this for us. 
 
 ![Cleanup](/images/blog/2021-05-10-bypass-windows-login-with-sticky-keys/Cleanup.png "Cleanup"){:.blogImageInline}
 

@@ -3,17 +3,17 @@ layout: post
 title:  "Installing BookStack on Ubuntu Server 20.04 with SSL"
 excerpt: "BookStack is a free and open source Wiki software."
 date:   2020-05-21 11:00:00
-lastmod: 2022-05-26 23:00:00
+lastmod: 2022-07-02 23:00:00
 ---
 
 [BookStack](https://www.bookstackapp.com/) is a free and open source Wiki software. Its powerful markdown editor and ease of use has made it a popular alternative to software such as [DokuWiki](https://www.dokuwiki.org/DokuWiki) and [Wiki.js](https://wiki.js.org/). It is also very easy to setup and get running. In this article I will show you how to install and configure BookStack to work on Ubuntu Server 20.04 with an SSL certificate from LetsEncrypt.
 
-The first thing you need to do is install Ubuntu Server 20.04 on any platform of your choice. Personally I use [Linode](https://www.linode.com/), however any provider or even self-hosting would work just fine for this.
+The first thing you need to do is install Ubuntu Server 20.04 on any platform of your choice. Personally I use [Linode](https://www.linode.com/lp/refer/?r=4c86e82eb937214729bef01cc21b61756f354834), however any provider or even self-hosting would work just fine for this.
 
 Once that is complete we can move onto installing BookStack itself, this is very easy and these couple of instructions are [directly from their Wiki](https://www.bookstackapp.com/docs/admin/installation/#ubuntu-2004).
 
 <pre><code class="language-bash"># Download the script
-wget https://raw.githubusercontent.com/BookStackApp/devops/master/scripts/installation-ubuntu-20.04.sh
+wget https://raw.githubusercontent.com/BookStackApp/devops/main/scripts/installation-ubuntu-20.04.sh
 
 # Make it executable
 chmod a+x installation-ubuntu-20.04.sh
@@ -67,6 +67,6 @@ Aaaaaaaand just like that you're done! Its a fairly simple setup, and below you 
 
 1. Change the admin users password and email address.
 2. [Setup SMTP](https://www.bookstackapp.com/docs/admin/email-config/) for password resets.
-3. Add <inline-code>SESSION_SECURE_COOKIE=true</inline-code> to <inline-code>/var/www/bookstack/.env</inline-code> so cookies are only delivered over SSL.
+3. Add <code>SESSION_SECURE_COOKIE=true</code> to <code>/var/www/bookstack/.env</code> so cookies are only delivered over SSL.
 4. Setup UFW to block SSH from un-trusted IP addresses.
 5. Setup fail2ban to block brute force attacks from logging into your server.

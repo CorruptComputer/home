@@ -3,7 +3,7 @@ layout: post
 title:  "Removing Steam Games from Control Panel and Apps list on Windows"
 excerpt: "It might just be me, but I find these to be absolutely useless and actually get in the way of actually finding the apps that I want to remove."
 date:   2021-03-05 23:00:00
-lastmod: 2022-05-26 23:00:00
+lastmod: 2022-07-02 23:00:00
 ---
 
 It might just be me, but I find these to be absolutely useless and actually get in the way of actually finding the apps that I want to remove. 
@@ -48,9 +48,9 @@ Create a new Trigger to have it run when you'd like. Personally I have it set to
 ![Steam Games Image 4](/images/blog/2021-03-05-remove-steam-games-from-control-panel/SteamGames4.png "Steam Games Image 4"){:.blogImageInline}
 
 Next create the action to run:
-- Program/Script: <inline-code>C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe</inline-code>
-- Add arguments: <inline-code>-ExecutionPolicy Bypass -File "C:\[path to your file]\Remove-Steam-Games-From-Control-Panel.ps1"</inline-code>
-- Start in: <inline-code>C:\[path to your file]</inline-code>
+- Program/Script: <code>C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe</code>
+- Add arguments: <code>-ExecutionPolicy Bypass -File "C:\[path to your file]\Remove-Steam-Games-From-Control-Panel.ps1"</code>
+- Start in: <code>C:\[path to your file]</code>
 ![Steam Games Image 5](/images/blog/2021-03-05-remove-steam-games-from-control-panel/SteamGames5.png "Steam Games Image 5"){:.blogImageInline}
 
 Aaaaaaand you're done!
