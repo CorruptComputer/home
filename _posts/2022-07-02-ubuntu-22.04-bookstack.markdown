@@ -26,7 +26,7 @@ sudo ./installation-ubuntu-22.04.sh
 
 Enter your domain name that the server will be hosted at when prompted.
 
-Once that completes you should be able to access BookStack in your browser. With the default username being <code>admin@admin.com</code> and password being password, these should be changed, but first lets setup SSL to make secure.
+Once that completes you should be able to access BookStack in your browser. With the default username being <code>admin@admin.com</code> and password being <code>password</code>, these should be changed, but first lets setup SSL to make secure.
 
 ### HTTPS/SSL Setup
 
