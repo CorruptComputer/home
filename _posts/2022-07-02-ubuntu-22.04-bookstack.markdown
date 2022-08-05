@@ -3,14 +3,14 @@ layout: post
 title:  "Installing BookStack on Ubuntu Server 22.04 with SSL"
 excerpt: "BookStack is a free and open source Wiki software. Lets get it setup on Ubuntu Server 22.04 with SSL enabled."
 date:   2022-07-02 23:00:00
-lastmod: 2022-07-02 23:00:00
+lastmod: 2022-08-04 23:00:00
 ---
 
-[My last post](/2020/05/21/ubuntu-20.04-bookstack) about this for Ubuntu 20.04 has by far been the most popular blog post that I've written so far, so lets get that guide up to date with the latest Ubuntu Server LTS and add some extra info for security and management of the server. Just in case you don't know, [BookStack](https://www.bookstackapp.com/) is a free and open source Wiki software.
+[My last post](/2020/05/21/ubuntu-20.04-bookstack) about this for Ubuntu 20.04 has by far been the most popular blog post that I've written so far, so lets get that guide up to date with the latest Ubuntu Server LTS and add some extra info for security and management of the server. Just in case you don't know, [BookStack](https://www.bookstackapp.com) is a free and open source Wiki software.
 
 ### Installation
 
-The first thing you need to do is install Ubuntu Server 22.04 on any platform of your choice. Personally I am still using [Linode](https://www.linode.com/lp/refer/?r=4c86e82eb937214729bef01cc21b61756f354834) for this, however any provider or even self-hosting would work just fine for this. 
+The first thing you need to do is install Ubuntu Server 22.04 on any platform of your choice. Personally I am still using [Linode](https://www.linode.com) for this, however any provider or even self-hosting would work just fine for this. 
 
 Once that is complete we can move onto installing BookStack itself, this is very easy and these couple of instructions are [directly from their Wiki](https://www.bookstackapp.com/docs/admin/installation/#ubuntu-2204).
 
