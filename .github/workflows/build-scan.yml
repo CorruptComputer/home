@@ -20,7 +20,7 @@ jobs:
         cache-version: 0 # Increment this number if you need to re-download cached gems
     - name: Build with Jekyll
       # Outputs to the './_site' directory by default
-      run: bundle exec jekyll build --future"
+      run: bundle exec jekyll build --future
       env:
         JEKYLL_ENV: production
     - name: SonarCloud Scan
