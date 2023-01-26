@@ -169,6 +169,11 @@ p, h4 {
 	}
 }
 
+.footnote {
+	font-size: small;
+	padding-left: 1%;
+}
+
 /*********
 ** Blog **
 *********/
@@ -268,6 +273,11 @@ code {
 		}
 		
 	}
+
+	.footnote {
+		font-size: small;
+		padding: 3%;
+	}
 	
 }
 
@@ -311,5 +321,10 @@ code {
 		padding: 20px;
 		margin: 10px;
 		background-color: #4d5676;
+	}
+
+	.footnote {
+		font-size: small;
+		padding: 5%;
 	}
 }
