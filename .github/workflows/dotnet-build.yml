@@ -17,9 +17,20 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v4
 
-      - name: Setup Environment
-        uses: ./.github/actions/setup-env
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '9.0.x'
+
+      - name: Print .NET version and SDKs
+        shell: bash
+        run: |
+          dotnet --version
+          dotnet --list-sdks
+
+      - name: Restore Tools
+        shell: bash
+        run: dotnet workload install wasm-tools
 
       - name: Build
-        run: |
-          dotnet build --configuration Debug --no-incremental
+        run: dotnet build --configuration Debug --no-incremental
