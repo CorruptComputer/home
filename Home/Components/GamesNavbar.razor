@@ -1,0 +1,15 @@
+﻿
+<nav>
+    <div class="navSquare @(SelectedGameButton == GameButton.Nim ? "selected" : string.Empty)" id="nimButton">
+        <a @onclick="NavigateToNotNim">
+            <img src="/images/home.webp" alt="Nim" />
+            <div>Nim</div>
+        </a>
+    </div>
+    <div class="navSquare @(SelectedGameButton == GameButton.Voronoi ? "selected" : string.Empty)" id="voronoiButton">
+        <a @onclick="NavigateToVoronoi">
+            <img src="/images/blog.webp" alt="Voronoi" />
+            <div>Voronoi</div>
+        </a>
+    </div>
+</nav>

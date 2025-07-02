@@ -1,0 +1,39 @@
+﻿@page "/blog/{Slug}"
+@layout MainLayout
+
+<PageTitle>@MetaData?.Title</PageTitle>
+
+@if (PostContent == null || MetaData == null)
+{
+    <Row>
+        <Box Title="Loading...">
+            <p>Loading...</p>
+        </Box>
+    </Row>
+}
+else
+{
+    <Row>
+        <Box Title="@MetaData?.Title" Date="@MetaData?.PublishedDate">
+            <p>Last Updated: <em>@(MetaData?.LastUpdatedDate.ToString("yyyy-MM-dd") ?? "Never")</em></p>
+
+            @if(MetaData?.ImageUrl != null)
+            {
+                <img src="@MetaData.ImageUrl" alt="@MetaData.Title" class="blogHeaderImage">
+            }
+            
+            <p>@PostContent</p>
+
+            @if (MetaData?.PublishedDate is not null) { // Drafts don't need comments
+                <script src="https://utteranc.es/client.js"
+                    repo="CorruptComputer/home"
+                    issue-term="url"
+                    label="Blog Comments"
+                    theme="github-dark"
+                    crossorigin="anonymous"
+                    async>
+                </script>
+            }
+        </Box>
+    </Row>
+}

@@ -1,0 +1,8 @@
+{
+    "recommendations": [
+        "ms-dotnettools.csharp",
+        "ms-dotnettools.vscodeintellicode-csharp",
+        "ms-dotnettools.vscode-dotnet-runtime",
+        "github.vscode-github-actions"
+    ]
+}

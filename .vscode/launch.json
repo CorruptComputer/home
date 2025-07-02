@@ -1,0 +1,11 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug Home",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}/AppHost/AppHost.csproj",
+        }
+    ]
+}

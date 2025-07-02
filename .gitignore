@@ -1,8 +1,13 @@
-### Jekyll ###
-_site/
-.sass-cache/
-.jekyll-cache/
-.jekyll-metadata
-
-### Ruby ###
-Gemfile.lock
+bin/
+obj/
+/packages/
+riderModule.iml
+/_ReSharper.Caches/
+*.user
+.idea/
+*opencover.xml
+coverage.xml
+TestResults/
+/publish-background-service/
+/publish-api/
+codeql-pack.lock.yml

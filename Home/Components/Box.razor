@@ -1,0 +1,10 @@
+﻿@using Home.Models
+
+<div class="box" style="@(BackgroundColorOverride == null ? string.Empty : $"background-color: {BackgroundColorOverride};")">
+    @TitleHtml
+    <hr />
+
+    <div class="boxContent">
+        @ChildContent
+    </div>
+</div>

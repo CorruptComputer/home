@@ -1,0 +1,51 @@
+@page "/blog"
+@layout MainLayout
+
+<PageTitle>Nickolas Gupton</PageTitle>
+
+@if (CurrentPage == 0) 
+{
+    <Row>
+        <Box Title="About my Blog">
+            <p>
+                I mostly look at programming, Linux, and other tech topics.
+                Thanks for checking out my internet ramblings.
+            </p>
+        </Box>
+        <Box Title="Comments">
+            <p>
+                This blog has comments powered by <a href="https://github.com/utterance/utterances" target="_blank" rel="noopener">Utterances</a>.
+                Utterances uses GitHub Issues as its backend storage for the comments, so in order to contribute you'll need to log in with your GitHub account.
+            </p>
+        </Box>
+    </Row>
+    <hr style="width: 100%;" />
+}
+
+@if (BlogPosts != null)
+{
+    @foreach ((int index, BlogPostMetaData post) in BlogPosts.Select((post, index) => (index, post)))
+    {
+        if (index >= (CurrentPage * PostsPerPage) && index < ((CurrentPage + 1) * PostsPerPage))
+        {
+            <Row>
+                <Box Title="@post.Title" Date="@post.PublishedDate">
+                    <p>@((MarkupString)post.Excerpt)</p>
+
+                    <Button OnClick="() => NavigateToPost(post.Slug)">Read More</Button>
+                </Box>
+            </Row>
+        }
+    }
+}
+
+@if (BlogPosts != null && BlogPosts.Count() > PostsPerPage)
+{
+    <Row>
+        <Button OnClick="NavigateToPreviousPage" Disabled="CurrentPage <= 0">Prev</Button>
+
+        <!-- TODO: Add page selection here -->
+
+        <Button OnClick="NavigateToNextPage" Disabled="CurrentPage >= TotalPages - 1">Next</Button>
+    </Row>
+}

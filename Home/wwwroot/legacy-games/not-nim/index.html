@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-US"><head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+   <meta name="description" content="!Nim is a mathematical game of strategy, which is based on the ancient Chineese board game Nim.">
+
+   <title>!Nim by Nickolas Gupton</title>
+
+   <!-- Import a CSS stylesheet to style the page. -->
+   <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+   <h1 style="display:none;">!Nim by Nickolas Gupton</h1>
+   <div id="left">
+      <fieldset>
+         <legend>Game</legend>
+         <div id="gameBoard">
+         </div>
+      </fieldset>
+   </div>
+
+   <div id="right">
+      <fieldset>
+         <legend>Settings</legend>
+         <p>!Nim is a mathematical game of strategy, which is based on the ancient Chineese board game <a href="https://en.wikipedia.org/wiki/Nim" target="_blank" rel="noopener">Nim</a>. In !Nim players take turns removing coins from heaps, and the player who takes the last coin on the board wins!</p>
+         <p>When choosing how many coins to take from a row, keep in mind that all coins to the right of the selected one will also be taken.</p>
+         
+         <p>Number of rows:
+            <select id="numberOfRows">
+               <option value="3">3</option>
+               <option value="4">4</option>
+               <option value="5">5</option>
+               <option value="6">6</option>
+               <option value="7">7</option>
+            </select>
+         </p>
+         
+         <p>Column configuration:
+            <select id="columnConfig">
+               <option value="triangle">Triangle</option>
+               <option value="square">Square</option>
+               <option value="random">Random</option>
+            </select>
+         </p>
+         
+         <p>Against AI?<input type="checkbox" id="isAgainstAI"></p>
+         
+         
+         <button id="newGame">New Game!</button>
+      </fieldset>
+   </div>
+
+   <!-- Import a JavaScript script to add interactivity to the page. -->
+   <script src="script.js"></script>
+
+</body></html>

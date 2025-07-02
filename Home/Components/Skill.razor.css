@@ -1,0 +1,14 @@
+li:nth-child(odd){
+	margin-top: 5px;
+	width: 60%;
+	float: left;
+}
+
+li:nth-child(even){
+	width: 40%;
+	float: right;
+}
+
+sup {
+	font-size: 0.6em;
+}

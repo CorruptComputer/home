@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <!-- Everything with lastmod="2025-07-01T21:00:00-05:00" was from the initial site rewrite -->
+    <url>
+        <loc>https://nickolas.gupton.xyz</loc>
+        <lastmod>2025-07-01T21:00:00-05:00</lastmod>
+    </url>
+    <url>
+        <loc>https://nickolas.gupton.xyz/blog</loc>
+        <lastmod>2025-07-01T21:00:00-05:00</lastmod>
+    </url>
+    <!-- Legacy Games -->
+    <url>
+        <loc>https://nickolas.gupton.xyz/legacy-games/not-nim/index.html</loc>
+        <lastmod>2025-07-01T21:00:00-05:00</lastmod>
+    </url>
+    <url>
+        <loc>https://nickolas.gupton.xyz/legacy-games/voronoi/index.html</loc>
+        <lastmod>2025-07-01T21:00:00-05:00</lastmod>
+    </url>
+    <!-- Blog Posts, in reverse chronological order -->
+    <url>
+        <loc>https://nickolas.gupton.xyz/blog/2022-07-02-ubuntu-22.04-bookstack</loc>
+        <lastmod>2025-07-01T21:00:00-05:00</lastmod>
+    </url>
+    <url>
+        <loc>https://nickolas.gupton.xyz/blog/2021-05-10-bypass-windows-login-with-sticky-keys</loc>
+        <lastmod>2025-07-01T21:00:00-05:00</lastmod>
+    </url>
+    <url>
+        <loc>https://nickolas.gupton.xyz/blog/2021-03-05-remove-steam-games-from-control-panel</loc>
+        <lastmod>2025-07-01T21:00:00-05:00</lastmod>
+    </url>
+    <url>
+        <loc>https://nickolas.gupton.xyz/blog/2020-05-21-ubuntu-20.04-bookstack</loc>
+        <lastmod>2025-07-01T21:00:00-05:00</lastmod>
+    </url>
+    <url>
+        <loc>https://nickolas.gupton.xyz/blog/2019-03-14-privacy-and-windows-10</loc>
+        <lastmod>2025-07-01T21:00:00-05:00</lastmod>
+    </url>
+    <url>
+        <loc>https://nickolas.gupton.xyz/blog/2017-04-26-linux</loc>
+        <lastmod>2025-07-01T21:00:00-05:00</lastmod>
+    </url>
+</urlset>

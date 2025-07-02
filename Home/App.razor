@@ -1,0 +1,27 @@
+﻿<Router AppAssembly="@typeof(App).Assembly">
+    <Found Context="routeData">
+        <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
+        <FocusOnNavigate RouteData="@routeData" Selector="h1" />
+    </Found>
+    <NotFound>
+        <PageTitle>Not found</PageTitle>
+        <LayoutView Layout="@typeof(MainLayout)">
+            <Row>
+                <Box Title="404 Page Not Found">
+                    <p>
+                        This is kinda embarassing, it looks like you somehow found your way to a page that doesn't exist. <br />
+                        If this was my fault please <a href="https://github.com/CorruptComputer/home/issues" target="_blank" rel="noopener">let me know on GitHub</a> so I can get this fixed.<br />
+                        Anyways, heres a picture of a Sloth with an Eagles head:
+                    </p>
+                    <div style="display: flex; justify-content: space-around;">
+                        <img src="/images/404.webp" alt="Sloth with an Eagles head" style="width: 50%;"/>
+                    </div>
+                    <br />
+                    <div style="display: flex; justify-content: space-around;">
+                        <Button OnClick="() => NavigateHome()">Return home</Button>
+                    </div>
+                </Box>
+            </Row>
+        </LayoutView>
+    </NotFound>
+</Router>

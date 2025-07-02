@@ -1,0 +1,24 @@
+﻿
+<nav>
+    <div class="navSquare noHover">
+        <img id="monkey" src="/images/monkey.webp" alt="Monkey" class="@(Spinning ? "monkeySpin" : string.Empty)" @onclick="MonkeyOnClick" />
+    </div>
+    <div class="navSquare @(SelectedNavButton == NavButton.Home ? "selected" : string.Empty)" id="homeButton">
+        <a @onclick="NavigateToHome">
+            <img src="/images/home.webp" alt="Home" />
+            <div>Home</div>
+        </a>
+    </div>
+    <div class="navSquare @(SelectedNavButton == NavButton.Blog ? "selected" : string.Empty)" id="blogButton">
+        <a @onclick="NavigateToBlog">
+            <img src="/images/blog.webp" alt="Blog" />
+            <div>Blog</div>
+        </a>
+    </div>
+    <!--div class="navSquare @(SelectedNavButton == NavButton.Games ? "selected" : string.Empty)" id="gamesButton">
+        <a @onclick="NavigateToGames">
+            <img src="/images/blog.webp" alt="Games" />
+            <div>Games</div>
+        </a>
+    </div-->
+</nav>
