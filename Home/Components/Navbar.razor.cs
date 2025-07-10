@@ -1,3 +1,4 @@
+using System.Text.RegularExpressions;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 
@@ -54,13 +55,17 @@ public partial class Navbar(NavigationManager NavManager) : ComponentBase
         NavManager.NavigateTo("/games");
     }
 
+    // For legacy blog URLs, /{Year}/{Month}/{Day}/{Slug}
+    [GeneratedRegex(@"/\d{4}/\d{2}/\d{2}/[a-zA-Z0-9-]+")]
+    private static partial Regex LegacyBlogPostUrlRegex();
+
     private void SetSelectedNavButton()
     {
-        if (NavManager.Uri.Contains("/blog"))
+        if (NavManager.Uri.Contains("/blog") || LegacyBlogPostUrlRegex().IsMatch(NavManager.Uri))
         {
             SelectedNavButton = NavButton.Blog;
         }
-        else if (NavManager.Uri.Contains("/games"))
+        else if (NavManager.Uri.Contains("/games")) // Legacy games don't use this navbar so they don't matter
         {
             SelectedNavButton = NavButton.Games;
         }
