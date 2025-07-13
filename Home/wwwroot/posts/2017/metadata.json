@@ -5,6 +5,10 @@
         "Slug": "2017-04-26-linux",
         "PublishedDate": "2017-04-26T16:42:00-05:00",
         "LastUpdatedDate": "2022-07-02T23:00:00-05:00",
-        "ImageUrl": "/images/blog/2017-04-26-linux/GNOMEdesktop.png"
+        "ImageUrl": "/images/blog/2017-04-26-linux/GNOMEdesktop.png",
+        "Edits": {
+            "2017-04-26": "Grammar, spelling, and sources.",
+            "2021-03-10": "Remove Antergos link. RIP :("
+        }
     }
 ]

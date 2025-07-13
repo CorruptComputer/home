@@ -32,7 +32,7 @@
                 <Box Title="@post.Title" Date="@post.PublishedDate">
                     <p>@((MarkupString)post.Excerpt)</p>
 
-                    <Button OnClick="() => NavigateToPost(post.Slug)">Read More</Button>
+                    <LinkButton Href="@GetPostUrlFromSlug(post.Slug)">Read More</LinkButton>
                 </Box>
             </Row>
         }
@@ -42,10 +42,10 @@
 @if (BlogPosts != null && BlogPosts.Count() > PostsPerPage)
 {
     <Row>
-        <Button OnClick="NavigateToPreviousPage" Disabled="CurrentPage <= 0">Prev</Button>
+        <Button OnLeftClickCallback="NavigateToPreviousPage" Disabled="CurrentPage <= 0">Prev</Button>
 
         <!-- TODO: Add page selection here -->
 
-        <Button OnClick="NavigateToNextPage" Disabled="CurrentPage >= TotalPages - 1">Next</Button>
+        <Button OnLeftClickCallback="NavigateToNextPage" Disabled="CurrentPage >= TotalPages - 1">Next</Button>
     </Row>
 }

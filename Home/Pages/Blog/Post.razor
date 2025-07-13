@@ -24,6 +24,17 @@ else
             
             <p>@PostContent</p>
 
+            @if (MetaData?.Edits?.Count > 0)
+            {
+                <h3>Edits</h3>
+                <ul>
+                    @foreach (KeyValuePair<DateOnly, string> edit in MetaData.Edits)
+                    {
+                        <li>@edit.Key.ToString("yyyy-MM-dd"): @edit.Value</li>
+                    }
+                </ul>
+            }
+
             @if (MetaData?.PublishedDate is not null) { // Drafts don't need comments
                 <script src="https://utteranc.es/client.js"
                     repo="CorruptComputer/home"

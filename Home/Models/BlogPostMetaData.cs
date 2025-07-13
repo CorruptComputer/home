@@ -16,4 +16,6 @@ public class BlogPostMetaData
     public DateTimeOffset LastUpdatedDate { get; set; }
 
     public string? ImageUrl { get; set; }
+
+    public Dictionary<DateOnly, string>? Edits { get; set; }
 }

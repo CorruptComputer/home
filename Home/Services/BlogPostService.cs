@@ -6,6 +6,8 @@ public class BlogPostService(HttpClient httpClient)
 {
     private IOrderedEnumerable<BlogPostMetaData>? BlogPosts { get; set; }
 
+    private readonly Dictionary<string, string> PreloadedBlogPosts = [];
+
     private readonly List<ushort> Years = [2017, 2019, 2020, 2021, 2022];
 
     public async Task<IOrderedEnumerable<BlogPostMetaData>> GetPosts()
@@ -28,6 +30,28 @@ public class BlogPostService(HttpClient httpClient)
         return BlogPosts?.FirstOrDefault(x => x.Slug == slug);
     }
 
+    public async Task PreloadPostMarkdown(IEnumerable<string> slugs)
+    {
+        if (BlogPosts == null)
+        {
+            await LoadMetaData();
+        }
+
+        foreach (string slug in slugs)
+        {
+            if (!PreloadedBlogPosts.ContainsKey(slug))
+            {
+                BlogPostMetaData? metaData = BlogPosts?.FirstOrDefault(x => x.Slug == slug);
+
+                if (metaData != null)
+                {
+                    string markdown = await httpClient.GetStringAsync($"posts/{metaData.PublishedDate?.Year.ToString() ?? "drafts"}/{metaData.Slug}.md");
+                    PreloadedBlogPosts[slug] = markdown;
+                }
+            }
+        }
+    }
+
     public async Task<string?> GetPostMarkdown(string slug)
     {
         BlogPostMetaData? metaData = await GetPostMetaData(slug);
@@ -37,7 +61,15 @@ public class BlogPostService(HttpClient httpClient)
             return null;
         }
 
-        return await httpClient.GetStringAsync($"posts/{metaData.PublishedDate?.Year.ToString() ?? "drafts"}/{metaData.Slug}.md");
+        if (PreloadedBlogPosts.TryGetValue(slug, out string? markdown))
+        {
+            return markdown;
+        }
+
+        string str = await httpClient.GetStringAsync($"posts/{metaData.PublishedDate?.Year.ToString() ?? "drafts"}/{metaData.Slug}.md");
+        PreloadedBlogPosts[slug] = str;
+
+        return str;
     }
 
     private async Task LoadMetaData()

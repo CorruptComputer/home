@@ -5,6 +5,9 @@ namespace Home.Components;
 
 public partial class Box : ComponentBase
 {
+    /// <summary>
+    ///   The title of the box, by default rendered as an H2 element.
+    /// </summary>
     [Parameter]
     public required string Title { get; set; }
 
