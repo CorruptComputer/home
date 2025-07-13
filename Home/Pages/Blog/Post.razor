@@ -1,8 +1,6 @@
 ﻿@page "/blog/{Slug}"
 @layout MainLayout
 
-<PageTitle>@MetaData?.Title</PageTitle>
-
 @if (PostContent == null || MetaData == null)
 {
     <Row>
@@ -13,18 +11,20 @@
 }
 else
 {
-    <Row>
-        <Box Title="@MetaData?.Title" Date="@MetaData?.PublishedDate">
-            <p>Last Updated: <em>@(MetaData?.LastUpdatedDate.ToString("yyyy-MM-dd") ?? "Never")</em></p>
+    <PageTitle>@MetaData.Title</PageTitle>
 
-            @if(MetaData?.ImageUrl != null)
+    <Row>
+        <Box Title="@MetaData.Title" Date="@MetaData.PublishedDate">
+            <p>Last Updated: <em>@(MetaData.LastUpdatedDate.ToString("yyyy-MM-dd") ?? "Never")</em></p>
+
+            @if(MetaData.ImageUrl != null)
             {
                 <img src="@MetaData.ImageUrl" alt="@MetaData.Title" class="blogHeaderImage">
             }
             
             <p>@PostContent</p>
 
-            @if (MetaData?.Edits?.Count > 0)
+            @if (MetaData.Edits?.Count > 0)
             {
                 <h3>Edits</h3>
                 <ul>
@@ -35,7 +35,7 @@ else
                 </ul>
             }
 
-            @if (MetaData?.PublishedDate is not null) { // Drafts don't need comments
+            @if (MetaData.PublishedDate is not null) { // Drafts don't need comments
                 <script src="https://utteranc.es/client.js"
                     repo="CorruptComputer/home"
                     issue-term="url"
