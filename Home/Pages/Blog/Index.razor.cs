@@ -21,17 +21,9 @@ public partial class Index(NavigationManager navManager, BlogPostService blogPos
     protected override async Task OnInitializedAsync()
     {
         BlogPosts = await blogPostService.GetPosts();
-        await PreloadCurrentPagePosts();
 
         await InvokeAsync(StateHasChanged);
         base.OnInitialized();
-    }
-
-    protected override async Task OnParametersSetAsync()
-    {
-        await PreloadCurrentPagePosts();
-
-        await base.OnParametersSetAsync();
     }
 
     public void NavigateToPage(int page)
@@ -61,19 +53,5 @@ public partial class Index(NavigationManager navManager, BlogPostService blogPos
     public static string GetPostUrlFromSlug(string slug)
     {
         return SiteUrls.BlogPost.Replace(SiteUrls.POST_SLUG_PARAM, slug);
-    }
-
-    private async Task PreloadCurrentPagePosts()
-    {
-        if (BlogPosts is null)
-        {
-            return;
-        }
-
-        int startIndex = CurrentPage * PostsPerPage;
-        int endIndex = Math.Min(startIndex + PostsPerPage, BlogPosts.Count());
-
-        IEnumerable<string> slugsToPreload = BlogPosts.Skip(startIndex).Take(endIndex - startIndex).Select(x => x.Slug);
-        await blogPostService.PreloadPostMarkdown(slugsToPreload);
     }
 }

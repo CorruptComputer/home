@@ -1,0 +1,71 @@
+﻿@page "/blog/2020-05-21-ubuntu-20.04-bookstack"
+@layout BlogPostLayout
+
+<p><a href="https://www.bookstackapp.com">BookStack</a> is a free and open source Wiki software. Its powerful markdown editor and ease of use has made it a popular alternative to software such as <a href="https://www.dokuwiki.org/DokuWiki">DokuWiki</a> and <a href="https://wiki.js.org">Wiki.js</a>. It is also very easy to setup and get running. In this article I will show you how to install and configure BookStack to work on Ubuntu Server 20.04 with an SSL certificate from LetsEncrypt.</p>
+
+<p>The first thing you need to do is install Ubuntu Server 20.04 on any platform of your choice. Personally I use <a href="https://www.linode.com">Linode</a>, however any provider or even self-hosting would work just fine for this.</p>
+
+<p>Once that is complete we can move onto installing BookStack itself, this is very easy and these couple of instructions are <a href="https://www.bookstackapp.com/docs/admin/installation/#ubuntu-2004">directly from their Wiki</a>.</p>
+
+<pre><code class="language-bash"># Download the script
+wget https://raw.githubusercontent.com/BookStackApp/devops/main/scripts/installation-ubuntu-20.04.sh
+
+# Make it executable
+chmod a+x installation-ubuntu-20.04.sh
+
+# Run the script with admin permissions
+sudo ./installation-ubuntu-20.04.sh
+</code></pre>
+
+<p>Enter your domain name that the server will be hosted at when prompted.</p>
+
+<p>Once that completes you should be able to access BookStack in the browser. With the default username being admin@admin.com and password being password, these should be changed, but first lets setup SSL to make secure.</p>
+
+<p>First thing to do is install certbot and get the certificate generated.</p>
+
+<pre><code class="language-bash">apt install certbot
+
+certbot certonly --webroot --agree-tos --email &lt;your email addreess&gt; -d &lt;your domain&gt; --webroot-path /var/www/bookstack/public
+
+# Finally add the following to your crontab
+# 0 0 * * * certbot renew</code></pre>
+
+<p>Once that is done we can configure Apache to use the certificate for Bookstack.</p>
+
+<p>This is what the file should look like before:</p>
+
+<pre><code class="language-apacheconf">&lt;VirtualHost *:80&gt;
+    ServerName &lt;your domain name&gt;
+
+...</code></pre>
+
+<p>This is after making the required changes: (the only changes required happen above line 10) </p>
+
+<pre><code class="language-apacheconf">&lt;VirtualHost *:80&gt;
+    ServerName &lt;your domain name&gt;
+    Redirect permanent / https://&lt;your domain name&gt;/
+&lt;/VirtualHost&gt;
+
+&lt;VirtualHost *:443&gt;
+    SSLEngine On
+    SSLCertificateFile /etc/letsencrypt/live/&lt;your domain name&gt;/fullchain.pem
+    SSLCertificateKeyFile /etc/letsencrypt/live/&lt;your domain name&gt;/privkey.pem
+    ServerName &lt;your domain name&gt;
+
+...</code></pre>
+
+<p>Finally you need to enable SSL on Apache2 and restart the service: </p>
+
+<pre><code class="language-bash">a2enmod ssl
+
+systemctl restart apache2.service</code></pre>
+
+<p>Aaaaaaaand just like that you're done! Its a fairly simple setup, and below you can find some extra steps for afterwards to help keep it secure.</p>
+
+<ol>
+<li>Change the admin users password and email address.</li>
+<li><a href="https://www.bookstackapp.com/docs/admin/email-config/">Setup SMTP</a> for password resets.</li>
+<li>Add <code>SESSION<em>SECURE</em>COOKIE=true</code> to <code>/var/www/bookstack/.env</code> so cookies are only delivered over SSL.</li>
+<li>Setup UFW to block SSH from un-trusted IP addresses.</li>
+<li>Setup fail2ban to block brute force attacks from logging into your server.</li>
+</ol>

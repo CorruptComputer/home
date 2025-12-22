@@ -16,9 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="MarkdownSharp" Version="2.0.5" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="10.0.1" />
-    <PackageReference Include="Microsoft.Extensions.Http" Version="10.0.1" />
   </ItemGroup>
 
   <ItemGroup>
@@ -26,7 +24,7 @@
   </ItemGroup>
 
   <ItemGroup Condition="$(Configuration) != 'Debug'">
-    <Content Remove="wwwroot\posts\drafts\*" />
+    <Content Remove="Pages/Blog/Posts/Drafts/*" />
   </ItemGroup>
 
 </Project>

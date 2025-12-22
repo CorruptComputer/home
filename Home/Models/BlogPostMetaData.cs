@@ -1,21 +1,21 @@
 namespace Home.Models;
 
-public class BlogPostMetaData
+public sealed record BlogPostMetaData
 {
-    public required string Title { get; set; }
+    public required string Title { get; init; }
 
-    public required string Excerpt { get; set; }
+    public required string Excerpt { get; init; }
 
-    public required string Slug { get; set; }
+    public required string Slug { get; init; }
 
     /// <summary>
     ///   Null if the post is a draft.
     /// </summary>
-    public DateTimeOffset? PublishedDate { get; set; }
+    public required DateTimeOffset? PublishedDate { get; init; }
 
-    public DateTimeOffset LastUpdatedDate { get; set; }
+    public required DateTimeOffset LastUpdatedDate { get; init; }
 
-    public string? ImageUrl { get; set; }
+    public required string? ImageUrl { get; init; }
 
-    public Dictionary<DateOnly, string>? Edits { get; set; }
+    public required Dictionary<DateOnly, string> Edits { get; init; }
 }

@@ -1,0 +1,53 @@
+﻿@layout MainLayout
+@inherits LayoutComponentBase
+@using Home.Components
+
+<CascadingValue Value="this">
+    @if (MetaData == null)
+    {
+        <Row>
+            <Box Title="Loading...">
+                <p>Loading...</p>
+            </Box>
+        </Row>
+    }
+    else
+    {
+        <PageTitle>@MetaData.Title</PageTitle>
+
+        <Row>
+            <Box Title="@MetaData.Title" Date="@MetaData.PublishedDate">
+                <p>Last Updated: <em>@(MetaData.LastUpdatedDate.ToString("yyyy-MM-dd") ?? "Never")</em></p>
+
+                @if(MetaData.ImageUrl != null)
+                {
+                    <img src="@MetaData.ImageUrl" alt="@MetaData.Title" class="blogHeaderImage">
+                }
+
+                <p>@Body</p>
+
+                @if (MetaData.Edits?.Count > 0)
+                {
+                    <h3>Edits</h3>
+                    <ul>
+                        @foreach (KeyValuePair<DateOnly, string> edit in MetaData.Edits)
+                        {
+                            <li>@edit.Key.ToString("yyyy-MM-dd"): @edit.Value</li>
+                        }
+                    </ul>
+                }
+
+                @if (MetaData.PublishedDate is not null) { // Drafts don't need comments
+                    <script src="https://utteranc.es/client.js"
+                        repo="CorruptComputer/home"
+                        issue-term="url"
+                        label="Blog Comments"
+                        theme="github-dark"
+                        crossorigin="anonymous"
+                        async>
+                    </script>
+                }
+            </Box>
+        </Row>
+    }
+</CascadingValue>
