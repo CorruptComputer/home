@@ -27,6 +27,6 @@ public partial class LegacyBlogPostRedirect(NavigationManager navManager) : Comp
             return;
         }
 
-        navManager.NavigateTo($"/blog/{Year}-{Month}-{Day}-{Slug}");
+        navManager.NavigateTo($"/blog/{Year}-{Month}-{Day}-{Slug.Replace(".html", string.Empty)}");
     }
 }
