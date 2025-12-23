@@ -22,6 +22,6 @@ public partial class Skill : ComponentBase
         : $"{Duration} year{(Duration == 1 ? string.Empty : "s")}";
 
     public string TimeframeStr => EndYear == null
-        ? $"{StartYear}-"
+        ? $"{StartYear}->"
         : $"{StartYear}-{EndYear}";
 }
