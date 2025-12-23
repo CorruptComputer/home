@@ -1,7 +1,7 @@
 ﻿
 <nav>
     <div class="navSquare noHover">
-        <img id="monkey" src="/images/monkey.webp" alt="Monkey" class="@(Spinning ? "monkeySpin" : string.Empty)" @onclick="MonkeyOnClick" />
+        <img id="monkey" src="/images/monkey.png" alt="Monkey" class="@(Spinning ? "monkeySpin" : string.Empty)" @onclick="MonkeyOnClick" />
     </div>
     <div class="navSquare @(SelectedNavButton == NavButton.Home ? "selected" : string.Empty)" id="homeButton">
         <a @onclick="NavigateToHome">
