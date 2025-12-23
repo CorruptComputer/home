@@ -29,8 +29,12 @@
 </Box>
 
 <Box Title="Settings">
-    <p>Nim is a mathematical game of strategy, which is based on the ancient Chineese board game <a href="https://en.wikipedia.org/wiki/Nim" target="_blank" rel="noopener">Nim</a>. In Nim players take turns removing coins from heaps, and the player who takes the last coin on the board wins!</p>
-    <p>When choosing how many coins to take from a row, keep in mind that all coins to the right of the selected one will also be taken.</p>
+    <p>
+        <a href="https://en.wikipedia.org/wiki/Nim" target="_blank" rel="noopener">Nim</a> is an ancient Chinese mathematical game of strategy.
+        In Nim players take turns removing coins from heaps, and the player who takes the last coin on the board wins.
+
+        When choosing how many coins to take from a row, keep in mind that all coins to the right of the selected one will also be taken.
+    </p>
 
     <EditForm Model="@Options" OnSubmit="() => StartNewGame()">
         <p>Number of rows:

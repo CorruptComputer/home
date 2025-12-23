@@ -1,25 +1,6 @@
 ﻿@page "/"
 @layout MainLayout
 
-<PageTitle>Nickolas Gupton</PageTitle>
-
-<Row>
-    <Box Title="Hello there!">
-        <p>
-            I started programming in High School, and have had a passion for it ever since.
-            The first language I ever used was Java and it will always have a soft spot in my heart, however since then I have learned and grown to love many other languages such as C#, C++, Python, and JavaScript.
-            The best thing to me about being a Software Developer is the constant need to learn and hone your skills with how quickly new technologies and best practices are released.
-            <br />
-            <br /> Some qualities for developing software that I think are important:
-            <br /> Write readable code: if no one can read the code and edit it that does nothing but hurt everyone in the long run.
-            <br /> Documentation is just as important as code: if you write some awesome piece of software and no one knows how to use it, then its not a useful one.
-            <br /> Always improve and learn: this field moves so quickly compared to others, if you are not constantly learning you'll end up getting left behind.
-            <br />
-            <br /> Below you will find some more information about me and what I am currently doing.
-        </p>
-    </Box>
-</Row>
-
 <Row>
     <Box Title="What I do">
         <Row>
@@ -27,20 +8,15 @@
                 <Row>
                     <SkillsList>
                         <Skill Name="Git" StartYear="2014" />
-                        <Skill Name="HTML" StartYear="2014" />
-                        <Skill Name="CSS" StartYear="2014" />
-                        <Skill Name="JavaScript" StartYear="2014" />
+                        <Skill Name="HTML/CSS/JS" StartYear="2014" />
                         <Skill Name="Linux" StartYear="2014" />
                         <Skill Name="SQL" StartYear="2020" />
                         <Skill Name="C#" StartYear="2020" />
-                        <Skill Name=".NET Core" StartYear="2020" />
-                        <Skill Name=".NET Framework" StartYear="2020" />
-                    </SkillsList>
-                    <SkillsList>
                         <Skill Name="ASP.NET" StartYear="2020" />
-                        <Skill Name="Avalonia" StartYear="2020" />
-                        <Skill Name="Unit Testing (+Gherkin)" StartYear="2020" />
-                        <Skill Name="Autofac DI" StartYear="2021" />
+                        <!--Skill Name="Avalonia" StartYear="2020" />
+                        <Skill Name="Unit/Integration Testing" StartYear="2020" />
+                        <Skill Name="Dependency Injection" StartYear="2021" /-->
+                        <Skill Name="Blazor" StartYear="2024" />
                         <Skill Name="Java" StartYear="2014" EndYear="2021" />
                         <Skill Name="Python" StartYear="2016" EndYear="2022" />
                         <Skill Name="C++" StartYear="2016" EndYear="2020" />
@@ -58,6 +34,9 @@
                         <Skill Name="Virtualization" StartYear="2018" />
                         <Skill Name="Microsoft SQL Server" StartYear="2020" />
                         <Skill Name="CI/CD (Azure DevOps)" StartYear="2020" />
+                        <Skill Name="Microsoft Azure" StartYear="2022" />
+                        <Skill Name="Postgres" StartYear="2024" />
+                        <Skill Name="Amazon Web Services" StartYear="2020" EndYear="2022" />
                         <Skill Name="Windows Server Management" StartYear="2018" EndYear="2020" />
                         <Skill Name="Terraform" StartYear="2021" EndYear="2022" />
                     </SkillsList>
@@ -73,22 +52,21 @@
             <Box TitleType="TitleType.H3" Title="In Development" BackgroundColorOverride="#454d6a">
                 <h4><a href="https://github.com/CorruptComputer/Bones" target="_blank" rel="noopener">Bones (working name)</a>:</h4>
                 <p>
-                    Bones is a project management platform I am developing in my free time,
-                    I've tried a lot of different platforms and none of them have worked exactly the way I wanted,
-                    so this is my attempt at making one to exactly fit my needs.
+                    Bones is a project management platform I am developing in my free time.
+                    I've tried a lot of different platforms (GitHub Projects, Azure DevOps, Trello, Jira, etc),
+                    and none of them have worked exactly the way I want, so this is my attempt at making one to exactly fit my needs.
                     <br />Used: Blazor WebAssembly, Cloudflare, CSS, C#, Git, HTML, JavaScript, Postgres
                 </p>
                 <h4><a href="https://github.com/CorruptComputer/BaldersGait" target="_blank" rel="noopener">BaldersGait (working name)</a>:</h4>
                 <p>
-                    BaldersGait is a goofy little idle game I am developing in my free time.
-                    It is about running a barber shop that gives a single haircut type, bald.
+                    BaldersGait is a goofy little idle game about running a barber shop that gives a single haircut type, bald.
                     <br />Used: Avalonia, C#, Git
                 </p>
                 <h4><a href="https://github.com/CorruptComputer/Shipyard" target="_blank" rel="noopener">Shipyard</a>:</h4>
                 <p>
                     Shipyard is a .NET application to package .NET applications on Linux.
                     Currently supports RPM packages, more formats in development.
-                    <br />Used: C#, Git, NuGet
+                    <br />Used: C#, Git, NuGet, rpmbuild, Scriban
                 </p>
                 <h4><a href="https://github.com/CorruptComputer/ReQuesty" target="_blank" rel="noopener">ReQuesty</a>:</h4>
                 <p>
@@ -98,10 +76,9 @@
                 </p>
             </Box>
             <Box TitleType="TitleType.H3" Title="Maintaining" BackgroundColorOverride="#454d6a">
-                <h4><a href="https://github.com/CorruptComputer/home" target="_blank" rel="noopener">My Website</a>:</h4>
+                <h4><a href="https://github.com/CorruptComputer/home" target="_blank" rel="noopener">Home</a>:</h4>
                 <p>
-                    The site you're currently looking at.
-                    I am not a designer, but I hope it still looks alright!
+                    My website, the site you are currently looking at!
                     <br />Used: Blazor WebAssembly, Cloudflare, CSS, C#, Git, HTML
                 </p>
                 <h4><a href="https://github.com/CorruptComputer/Questy" target="_blank" rel="noopener">Questy</a>:</h4>
@@ -113,7 +90,7 @@
                 <h4><a href="https://github.com/CorruptComputer/Beepsky" target="_blank" rel="noopener">Beepsky</a>:</h4>
                 <p>
                     Successor to Officer-Beepsky, this bot was rewritten in C# and uses NetCord.
-                    <br />Used: C#, Git
+                    <br />Used: C#, ffmpeg, Git, NetCord, Postgres, yt-dlp
                 </p>
             </Box>
             <Box TitleType="TitleType.H3" Title="End of Life" BackgroundColorOverride="#454d6a">
