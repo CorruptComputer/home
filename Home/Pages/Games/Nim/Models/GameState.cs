@@ -68,13 +68,12 @@ public class GameState(ILogger logger)
 
         if (AgainstComputer && !IsPlayer1Move)
         {
-            // AI Move
             ComputerMove = FindComputerMove();
             stateHasChanged();
 
             Task.Run(() =>
             {
-                Thread.Sleep(TimeSpan.FromSeconds(2)); // Pause for dramatic effect
+                Thread.Sleep(TimeSpan.FromSeconds(1)); // Pause for dramatic effect
                 TakeCoins(ComputerMove.Value.row, ComputerMove.Value.col);
                 if (!IsGameOver)
                 {
