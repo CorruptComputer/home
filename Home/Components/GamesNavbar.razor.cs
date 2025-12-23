@@ -4,20 +4,17 @@ namespace Home.Components;
 
 public partial class GamesNavbar(NavigationManager NavManager) : ComponentBase
 {
-    [Parameter]
-    public GameButton? SelectedGameButton { get; set; }
+    public GameButton SelectedGameButton { get; set; } = GameButton.Nim;
 
     protected override void OnInitialized()
     {
         GetSelectedGameButton();
-
         base.OnInitialized();
     }
 
     protected override void OnParametersSet()
     {
         GetSelectedGameButton();
-
         base.OnParametersSet();
     }
 
@@ -43,15 +40,10 @@ public partial class GamesNavbar(NavigationManager NavManager) : ComponentBase
         {
             SelectedGameButton = GameButton.Voronoi;
         }
-        else
-        {
-            SelectedGameButton = GameButton.None;
-        }
     }
 
     public enum GameButton
     {
-        None,
         Nim,
         Voronoi
     }

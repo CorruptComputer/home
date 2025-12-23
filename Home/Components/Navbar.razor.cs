@@ -51,8 +51,13 @@ public partial class Navbar(NavigationManager NavManager) : ComponentBase
 
     protected void NavigateToGames()
     {
+        if (SelectedNavButton == NavButton.Games)
+        {
+            return;
+        }
+
         SelectedNavButton = NavButton.Games;
-        NavManager.NavigateTo("/games");
+        NavManager.NavigateTo("/games/nim");
     }
 
     // For legacy blog URLs, /{Year}/{Month}/{Day}/{Slug}
@@ -65,7 +70,7 @@ public partial class Navbar(NavigationManager NavManager) : ComponentBase
         {
             SelectedNavButton = NavButton.Blog;
         }
-        else if (NavManager.Uri.Contains("/games")) // Legacy games don't use this navbar so they don't matter
+        else if (NavManager.Uri.Contains("/games"))
         {
             SelectedNavButton = NavButton.Games;
         }

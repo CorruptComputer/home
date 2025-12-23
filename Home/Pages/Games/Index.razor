@@ -1,5 +1,5 @@
 ﻿@page "/games"
-@layout GamesLayout
+@layout MainLayout
 
 <Row>
     <Box Title="Web Games">
@@ -16,18 +16,14 @@
             Nim is a mathematical game of strategy, which is based on the ancient Chineese board game <a href="https://en.wikipedia.org/wiki/Nim" target="_blank" rel="noopener">Nim</a>.
             In !Nim players take turns removing coins from heaps, and the player who takes the last coin on the board wins!
         </p>
-        <p>
-            <a href="/games/nim">Play Now</a>
-        </p>
+        <LinkButton Href="/games/nim">Play Now</LinkButton>
     </Box>
 
-    <Box Title="Voronoi">
+    <!--Box Title="Voronoi">
         <p>
             A Voronoi diagram is a partitioning of a space into regions based on distance to points in the space.
             This is a simple implementation of a Voronoi diagram.
         </p>
-        <p>
-            <a href="/games/voronoi">Play Now</a>
-        </p>
-    </Box>
+        <LinkButton Href="/games/voronoi">Play Now</LinkButton>
+    </Box-->
 </Row>

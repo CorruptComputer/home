@@ -2,8 +2,13 @@
 @using Home.Components
 
 <h1 style="display:none;">My Website and Blog</h1>
-<div class="container">
+<div class="@ContainerClass">
     @Body
 </div>
+
+@if (ShowGamesNavbar)
+{
+    <GamesNavbar />
+}
 
 <Navbar />

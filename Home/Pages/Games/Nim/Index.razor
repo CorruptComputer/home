@@ -1,0 +1,50 @@
+﻿@page "/games/nim"
+@layout MainLayout
+
+<Box Title="Nim">
+    <div id="gameBoard">
+        @for (int r = 0; r < State.StartingBoard.Count; r++)
+        {
+            <div class="row">
+                @for (int c = 0; c < State.StartingBoard[r]; c++)
+                {
+                    int rowNumber = r;
+                    int colNumber = c;
+                    <div class="coin @(State.CurrentBoard[rowNumber] <= colNumber
+                                        ? "disabled"
+                                        : string.Empty)
+                                     @(State.ComputerMove?.row == rowNumber && State.ComputerMove?.col == colNumber
+                                        ? "computerSelected"
+                                        : string.Empty)"
+                         onclick="@(() => TakeCoinsOnClick(rowNumber, colNumber))">
+                        <img src="/images/games/nim-coin.svg" alt="Nim Coin" />
+                    </div>
+                }
+            </div>
+        }
+        <p>@GetPlayerMoveText()</p>
+    </div>
+</Box>
+
+<Box Title="Settings">
+    <p>Nim is a mathematical game of strategy, which is based on the ancient Chineese board game <a href="https://en.wikipedia.org/wiki/Nim" target="_blank" rel="noopener">Nim</a>. In Nim players take turns removing coins from heaps, and the player who takes the last coin on the board wins!</p>
+    <p>When choosing how many coins to take from a row, keep in mind that all coins to the right of the selected one will also be taken.</p>
+
+    <EditForm Model="@Options" OnSubmit="() => StartNewGame()">
+        <p>Number of rows:
+            <InputNumber id="numberOfRows" @bind-Value="Options.NumberOfRows" />
+        </p>
+        <p>Column configuration:
+            <InputSelect id="columnConfiguration" @bind-Value="Options.ColumnConfiguration">
+                <option value="Triangle">Triangle</option>
+                <option value="Square">Square</option>
+                <option value="Random">Random</option>
+            </InputSelect>
+        </p>
+        <p>Against computer?
+            <InputCheckbox id="againstAi" @bind-Value="Options.AgainstComputer" />
+        </p>
+
+        <input type="submit" value="New Game" />
+    </EditForm>
+</Box>

@@ -1,4 +1,4 @@
-namespace Home.Pages.Games.NimModels;
+namespace Home.Pages.Games.Nim.Models;
 
 public enum ColumnConfiguration
 {
