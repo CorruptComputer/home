@@ -56,12 +56,16 @@ public partial class Index(ILogger<Index> logger)
             return;
         }
 
-        State.TakeCoins(row, col);
-        StateHasChanged();
-
-        if (!State.IsGameOver)
+        bool successfulMove = State.TakeCoins(row, col);
+        if (successfulMove)
         {
-            State.ChangePlayer(StateHasChanged);
+            StateHasChanged();
+
+            if (!State.IsGameOver)
+            {
+                State.ChangePlayer(StateHasChanged);
+            }
         }
+
     }
 }

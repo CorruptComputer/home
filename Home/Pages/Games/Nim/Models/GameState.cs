@@ -48,8 +48,14 @@ public class GameState(ILogger logger)
         CurrentBoard = [.. StartingBoard];
     }
 
-    public void TakeCoins(int row, int col)
+    public bool TakeCoins(int row, int col)
     {
+        if (!IsMoveValid(row, col))
+        {
+            logger.LogWarning("Invalid move attempted: row {Row}, col {Col}", row, col);
+            return false;
+        }
+
         CurrentBoard[row] = col;
 
         if (CurrentBoard.All(x => x == 0))
@@ -59,6 +65,22 @@ public class GameState(ILogger logger)
 
         logger.LogInformation("Set {Row} to {Col} coins.", row, col);
         logger.LogInformation("Current board: {CurrentBoard}", CurrentBoard.Select(x => x.ToString()).Aggregate((a, b) => a + ", " + b));
+        return true;
+    }
+
+    private bool IsMoveValid(int row, int col)
+    {
+        if (row < 0 || row >= CurrentBoard.Count)
+        {
+            return false;
+        }
+
+        if (col < 0 || col >= CurrentBoard[row])
+        {
+            return false;
+        }
+
+        return true;
     }
 
     public void ChangePlayer(Action stateHasChanged)
@@ -74,7 +96,13 @@ public class GameState(ILogger logger)
             Task.Run(() =>
             {
                 Thread.Sleep(TimeSpan.FromSeconds(1)); // Pause for dramatic effect
-                TakeCoins(ComputerMove.Value.row, ComputerMove.Value.col);
+                bool successfulMove = TakeCoins(ComputerMove.Value.row, ComputerMove.Value.col);
+
+                if (!successfulMove)
+                {
+                    logger.LogError("Computer attempted an invalid move: row {Row}, col {Col}\nWith board state: {CurrentBoard}", ComputerMove.Value.row, ComputerMove.Value.col, CurrentBoard.Select(x => x.ToString()).Aggregate((a, b) => a + ", " + b));
+                }
+
                 if (!IsGameOver)
                 {
                     IsPlayer1Move = !IsPlayer1Move;
