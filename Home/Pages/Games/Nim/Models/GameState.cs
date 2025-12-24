@@ -35,10 +35,9 @@ public class GameState(ILogger logger)
                 }
                 break;
             case ColumnConfiguration.Random:
-                Random random = new();
                 for (int i = 0; i < numberOfRows; i++)
                 {
-                    StartingBoard[i] = (ushort)random.Next(1, numberOfRows + 1);
+                    StartingBoard[i] = (ushort)Random.Shared.Next(1, numberOfRows + 1);
                 }
                 break;
         }
@@ -148,7 +147,7 @@ public class GameState(ILogger logger)
 
         int col = Random.Shared.Next(CurrentBoard[row]);
 
-        logger.LogInformation("AI random move: {Row} {Count}", row, col);
+        logger.LogInformation("Computer random move: {Row} {Count}", row, col);
         return (row, col);
     }
 }

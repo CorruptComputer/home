@@ -1,0 +1,9 @@
+.voronoi-svg {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1;
+    max-width: 100%;
+    border: 1px solid #999;
+    background-color: black;
+    cursor: crosshair;
+}

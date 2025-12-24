@@ -1,4 +1,40 @@
 ﻿@page "/games/voronoi"
+@using Home.Pages.Games.Voronoi.Models
 @layout MainLayout
 
-<h3>Voronoi</h3>
+<PageTitle>Games - Voronoi</PageTitle>
+
+<Box Title="Voronoi">
+    <svg @onclick="OnCanvasClick" class="voronoi-svg">
+        @foreach(VoronoiRegion region in Regions)
+        {
+            string points = string.Join(" ", region.PolygonPoints.Select(p => $"{p.x},{p.y}"));
+            @if (!string.IsNullOrEmpty(points))
+            {
+                <polygon points="@points" fill="@region.Point.Color" />
+            }
+        }
+
+        @foreach(VoronoiPoint point in State.GeneratingPoints)
+        {
+            <circle cx="@point.X" cy="@point.Y" r="7" fill="black" />
+            <circle cx="@point.X" cy="@point.Y" r="5" fill="white" />
+            <circle cx="@point.X" cy="@point.Y" r="3" fill="@point.Color" />
+        }
+    </svg>
+</Box>
+
+<Box Title="Settings">
+    <p>
+        <a href="https://en.wikipedia.org/wiki/Voronoi_diagram" target="_blank" rel="noopener">Voronoi diagrams</a> partition a plane into regions based on distance to a set of points.
+        Click on the SVG to add points (up to 20). Each colored region represents the area closest to that point.
+    </p>
+
+    <div>
+        <label>
+            <input type="checkbox" @onchange="OnManhattanToggle" checked="@State.ManhattanDistance" />
+            Use Manhattan Distance
+        </label>
+        <button @onclick="OnClear">Clear Points</button>
+    </div>
+</Box>
