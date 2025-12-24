@@ -8,14 +8,14 @@
     <svg @onclick="OnCanvasClick" class="voronoi-svg">
         @foreach(VoronoiRegion region in Regions)
         {
-            string points = string.Join(" ", region.PolygonPoints.Select(p => $"{p.x},{p.y}"));
+            string points = string.Join(" ", region.PolygonPoints.Select(p => $"{p.X},{p.Y}"));
             @if (!string.IsNullOrEmpty(points))
             {
-                <polygon points="@points" fill="@region.Point.Color" stroke="black" stroke-width="2" />
+                <polygon points="@points" fill="@region.VoronoiPoint.Color" stroke="black" stroke-width="2" />
             }
         }
 
-        @foreach(VoronoiPoint point in State.GeneratingPoints)
+        @foreach(Point point in State.VoronoiPoints)
         {
             <circle cx="@point.X" cy="@point.Y" r="7" fill="black" />
             <circle cx="@point.X" cy="@point.Y" r="5" fill="white" />
@@ -31,10 +31,10 @@
     </p>
 
     <div>
-        <label>
+        <!--label>
             <input type="checkbox" @onchange="OnManhattanToggle" checked="@State.ManhattanDistance" />
             Use Manhattan Distance
-        </label>
+        </label-->
         <button @onclick="OnClear">Clear Points</button>
     </div>
 </Box>

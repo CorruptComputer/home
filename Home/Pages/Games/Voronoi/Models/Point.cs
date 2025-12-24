@@ -1,10 +1,10 @@
 namespace Home.Pages.Games.Voronoi.Models;
 
-public class VoronoiPoint
+public class Point
 {
-    public int X { get; set; }
-    public int Y { get; set; }
-    public string Color { get; set; } = string.Empty;
+    public required int X { get; set; }
+    public required int Y { get; set; }
+    public string? Color { get; set; }
 
     public int Distance(int x, int y, bool manhattanDistance)
     {
