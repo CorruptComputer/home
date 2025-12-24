@@ -11,7 +11,7 @@
             string points = string.Join(" ", region.PolygonPoints.Select(p => $"{p.x},{p.y}"));
             @if (!string.IsNullOrEmpty(points))
             {
-                <polygon points="@points" fill="@region.Point.Color" />
+                <polygon points="@points" fill="@region.Point.Color" stroke="black" stroke-width="2" />
             }
         }
 
