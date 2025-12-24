@@ -36,7 +36,7 @@
         When choosing how many coins to take from a row, keep in mind that all coins to the right of the selected one will also be taken.
     </p>
 
-    <EditForm Model="@Options" OnSubmit="() => StartNewGame()">
+    <EditForm Model="@Options">
         <p>Number of rows:
             <InputNumber id="numberOfRows" @bind-Value="Options.NumberOfRows" />
         </p>
@@ -51,6 +51,6 @@
             <InputCheckbox id="againstAi" @bind-Value="Options.AgainstComputer" />
         </p>
 
-        <input type="submit" value="New Game" />
+        <Button OnLeftClickCallback="StartNewGame">New Game</Button>
     </EditForm>
 </Box>
