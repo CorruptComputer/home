@@ -4,16 +4,16 @@
 	padding: 20px;
 	margin: 10px;
 	background-color: rgb(82, 91, 122);
-	
-	--notchSize: 40px; 
+
+	--notchSize: 40px;
 	clip-path: polygon(
-			0% var(--notchSize), 
-			var(--notchSize) 0%, 
-			0px 0%, 
-			100% 0px, 
-			100% calc(100% - var(--notchSize)), 
-			calc(100% - var(--notchSize)) 100%, 
-			0px 100%, 
+			0% var(--notchSize),
+			var(--notchSize) 0%,
+			0px 0%,
+			100% 0px,
+			100% calc(100% - var(--notchSize)),
+			calc(100% - var(--notchSize)) 100%,
+			0px 100%,
 			0% 0px
 		);
 }
@@ -29,5 +29,6 @@
 		padding: 20px;
 		margin: 10px;
 		background-color: #4d5676;
+		overflow-x: auto;
 	}
 }
