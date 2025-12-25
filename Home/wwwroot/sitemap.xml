@@ -19,6 +19,10 @@
     </url>
     <!-- Blog Posts, in reverse chronological order of publish date -->
     <url>
+        <loc>https://nickolas.gupton.xyz/blog/2025-12-25-year-in-review</loc>
+        <lastmod>2025-12-25T16:00:00-05:00</lastmod>
+    </url>
+    <url>
         <loc>https://nickolas.gupton.xyz/blog/2022-07-02-ubuntu-22.04-bookstack</loc>
         <lastmod>2025-12-23T21:00:00-05:00</lastmod>
     </url>

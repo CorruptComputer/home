@@ -1,0 +1,229 @@
+﻿@page "/blog/2025-12-25-year-in-review"
+@layout BlogPostLayout
+
+<p>
+  2025 was a big year for me, with significant progress across several projects.
+  I also started new projects specifically to address problems I was running into with existing ones.
+  Let's start by reviewing some of the work I've done for projects other than my own:
+</p>
+
+<section>
+  <h3>Open Source Contributions</h3>
+  <p>
+    For OpenStreetMap repos, I've had 2 main contributions merge this year:
+  </p>
+  <ul>
+    <li>
+      <a href="https://github.com/osmlab/name-suggestion-index/pull/10386">Add Amegy Bank (osmlab/name-suggestion-index)</a>
+    </li>
+    <li>
+      <a href="https://github.com/openstreetmap/id-tagging-schema/pull/1327">Add operator field to highway=street_lamp (openstreetmap/id-tagging-schema)</a>
+    </li>
+  </ul>
+  <p>
+    These additions improve both the ease of mapping and data quality in OpenStreetMap.
+  </p>
+
+  <p>
+    For other repos, I've made a few contributions here and there:
+  </p>
+  <ul>
+    <li>
+      <a href="https://github.com/NginxProxyManager/nginx-proxy-manager/discussions/4598">Podman Quadlet documentation (NginxProxyManager/nginx-proxy-manager)</a>
+    </li>
+    <li>
+      <a href="https://github.com/quamotion/dotnet-packaging/pull/266">.NET 10 support (quamotion/dotnet-packaging)</a>
+    </li>
+    <li>
+      <a href="https://github.com/quamotion/dotnet-packaging/pull/267">Remove unsupported .NET versions (quamotion/dotnet-packaging)</a>
+    </li>
+  </ul>
+  <p>
+    The Nginx Proxy Manager documentation is very nice to have for folks that want to run the project via Podman Quadlets.
+    Clear documentation is difficult to find for this use case, so this will help folks that want to take this route in the future.
+  </p>
+  <p>
+    dotnet-packaging is a project I've been using to create the <code>.deb</code> and <code>.rpm</code> packages for my projects for a while now.
+    This project is somewhat unmaintained, with the last change before my PR here for .NET 10 support being my PR for .NET 9 support from last year.
+    More information on my Linux packaging journey will be below!
+  </p>
+</section>
+
+
+<section>
+  <h3>OpenStreetMap Contributions</h3>
+  <p>
+    Before getting into the state of my own projects, I also wanted to share some of the OpenStreetMap mapping projects I've been working on this year.
+  </p>
+  <p>
+    Taking a look at all my changes for the year, at the time of writing this post I've made 226 changesets:
+  </p>
+  <img src="/images/blog/2025-12-25-year-in-review/all-osm.png" alt="All OSM Changesets 2025" />
+  <p>
+    With the vast majority of my mapping being in the greater Houston area:
+  </p>
+  <img src="/images/blog/2025-12-25-year-in-review/greater-houston-osm.png" alt="Greater Houston OSM Changesets 2025" />
+  <p>
+    And a large focus on Tomball, TX specifically:
+  </p>
+  <img src="/images/blog/2025-12-25-year-in-review/tomball-osm.png" alt="Tomball OSM Changesets 2025" />
+  <p>
+    The main projects I've been working on this year with OSM have been:
+  </p>
+  <ul>
+    <li>Landuse and POIs in Tomball, TX</li>
+    <li>Max heights on underpasses in the Greater Houston area (<a href="https://maproulette.org/browse/challenges/53044">MapRoulette Challenge</a>)</li>
+    <li>Shops & Amenities without an address in the Greater Houston area(<a href="https://maproulette.org/browse/challenges/53030">Shops MapRoulette Challenge</a>, <a href="https://maproulette.org/browse/challenges/53031">Amenities MapRoulette Challenge</a>)</li>
+    <li>Roads without maxspeed in the Greater Houston area</li>
+  </ul>
+  <p>
+    For that last point, I've carved out a fairly large chunk of northern Houston:
+  </p>
+  <img src="/images/blog/2025-12-25-year-in-review/no-maxspeed-osm.png" alt="No maxspeed OSM Changesets 2025" />
+  <p>
+    This visualization was created using Overpass Turbo, with the following query:
+  </p>
+  <pre><code>
+[out:json][timeout:100];
+(
+  way ["highway"="motorway"]["access"!="no"]["access"!="private"]["motor_vehicle"!="no"][!"maxspeed"]({{bbox}});
+  way ["highway"="primary"]["access"!="no"]["access"!="private"]["motor_vehicle"!="no"][!"maxspeed"]({{bbox}});
+  way ["highway"="secondary"]["access"!="no"]["access"!="private"]["motor_vehicle"!="no"][!"maxspeed"]({{bbox}});
+  way ["highway"="tertiary"]["access"!="no"]["access"!="private"]["motor_vehicle"!="no"][!"maxspeed"]({{bbox}});
+  way ["highway"="unclassified"]["access"!="no"]["access"!="private"]["motor_vehicle"!="no"][!"maxspeed"]({{bbox}});
+);
+out geom;
+
+{{style:
+node
+{ color:red; fill-color:red; }
+
+way
+{ color:red; fill-color:red; }
+}}
+  </code></pre>
+  <p>
+    This does not include residential/neighborhood roads, and I am currently only focusing on more "main" type roads.
+  </p>
+  <p>
+    The 2 mapping projects I've created MapRoulette challenges for have not seen as much movement, however I've completed about 10% of the max heights challenge so I'd call that a win still.
+  </p>
+</section>
+
+
+<section>
+  <h3>My projects this year</h3>
+
+  <h4>BaldersGait</h4>
+  <p>
+    No significant progress on this project this year, this is on the backburner for now as I'd like to use Bones to plan this project out further before continuing.
+  </p>
+
+  <h4>Bones</h4>
+  <p>
+    At the start of the year, this project was pretty much my main focus.
+    However throughout the year I started swapping focus to other projects as I started running into issues with dependencies that Bones relied on.
+  </p>
+
+  <h4>Questy</h4>
+  <p>
+    At the start of July this year, MediatR changed their license and added DRM to their project.
+    I am very much a fan of the handler pattern that MediatR brings, so I forked the project at the last version under their Apache 2.0 license and have been maintaining it for my own use since then.
+  </p>
+
+  <h4>ReQuesty</h4>
+  <p>
+    In August of this year, I wanted a different way to generate HTTP Client code for the Bones API.
+    I had been using <a href="https://github.com/RicoSuter/NSwag">nswag</a> for this previously, and it works but it definitely has some quirks to it that sometimes leads to a lot of trial and error with models to get things to generate properly.
+  </p>
+  <p>
+    I found Kiota, which did not have a lot of those same issues. It just has a different massive issue: everything is generated as nullable, even when required.
+    To me this is wrong, and so I forked Kiota to create ReQuesty, which only generates nullables when the OpenAPI spec says something is nullable.
+    I have plans for more changes with this, but for now that was enough to make this work well for my needs.
+  </p>
+  <p>
+    Most of my other changes with this were code cleanup, since it is a new project I didn't need to care about backwards compatibility nor did I care about generating for any languages other than C# so a lot of code that I did not need got ripped out.
+  </p>
+
+  <h4>Beepsky</h4>
+  <p>
+    At the end of November this year, I started working on Beepsky, a replacement for the Officer-Beepsky Discord bot I originally wrote in Java.
+    This new bot is written in C# using the NetCord library, and has a couple extra features compared to the old bot.
+  </p>
+  <p>
+    The most significant change is support for responding to direct @@mentions.
+    Using an Ollama server, the bot can now generate responses when mentioned in a channel.
+  </p>
+
+  <h4>Shipyard</h4>
+  <p>
+    In December of this year, I started working on Shipyard, a new project to help me build and package my .NET projects for Linux distributions.
+    This project was made to fix the issues I was running into with dotnet-packaging, with the main one being it breaking with every new .NET release.
+  </p>
+  <p>
+    Instead of hooking into MSBuild and manually crafting the package archives the way dotnet-packaging does, Shipyard lets the native packaging tools handle what they do best.
+    My main reason for letting the native tools handle the packaging is that they are well tested and maintained by the distribution maintainers, so issues like <a href="https://github.com/quamotion/dotnet-packaging/issues/99">this</a> from dotnet-packaging are no longer a worry.
+    It's still very early days for this project, and all I have working so far is building <code>.rpm</code> packages, however here's a quick rundown of how I am envisioning this project to work:
+  </p>
+  <ul>
+    <li>All packaging types will be built into the same CLI, with the packaging being driven by a single <code>shipyard.json</code> file for the project.</li>
+    <li>This single file can drive multiple output packages, so each project ideally would only need one.</li>
+    <li>This single file can drive multiple architectures, so you can build <code>x86_64</code> and <code>arm64</code> off the same configuration.</li>
+    <li>The only 2 inputs the CLI should need are, <code>--config path/to/shipyard.json</code> and <code>--output path/to/output/dir/</code>.</li>
+  </ul>
+
+  <p>
+    The steps the project currently takes for this are:
+  </p>
+  <ol>
+    <li>Read and validate the provided configuration.</li>
+    <li>Publish the .NET project for the specified runtime IDs.</li>
+    <li>(for RPMs) Create the RPM spec file using the Scriban template.</li>
+    <li>(for RPMs) Create the initial RPM build root with the published project files.</li>
+    <li>(for RPMs) Optionally, include the systemd service in the build root if specified.</li>
+    <li>(for RPMs) Use the native <code>rpmbuild</code> tool to create the RPM package.</li>
+    <li>Copy the built package to the output directory and clean up the now unneeded intermediary build files.</li>
+  </ol>
+  <p>
+    More information on this project will be coming as I continue to develop it!
+  </p>
+
+  <h4>Home</h4>
+  <p>
+    In July of this year I migrated this site from being built with Jekyll to being built with Blazor WASM.
+  </p>
+  <p>
+    To be honest, I did this because I just really dislike JavaScript and wanted to use a better language, like C#.
+    For a simple somewhat static site like this, Blazor WASM is definitely overkill, but I like it and it gives me another chance to learn more about this tech so I did it anyways.
+  </p>
+  <p>
+    In December I also ported a couple of my smaller web games over to Blazor as well, which you can find in the Games section of the site on the left (or bottom, if you're on mobile).
+    These were originally built for a Web Development class in college, and I really liked them so I took the time to port them to Blazor and am quite happy with the results.
+  </p>
+  <p>
+    Nim hasn't changed much, it is more or less the same as it was before.
+    But for the Voronoi generator, I was able to greatly improve performance by swapping the HTML canvas for an SVG element.
+    The original version was an exercise in learning the canvas API for a class.
+    For this reimplementation, I wanted a more efficient approach than looping through every pixel on the canvas to set its color.
+    I haven't found a nice way to do this for Manhattan distance yet, so for now that remains unimplemented.
+  </p>
+</section>
+
+<section>
+  <h3>Conclusion and look into 2026</h3>
+  <p>
+    I am quite happy with the progress I've made this year, however there is still a lot more I want to do!
+  </p>
+  <p>
+    For 2026, my main goals with my projects are going to be:
+  </p>
+  <ul>
+    <li>Add <code>.deb</code> and <code>.tar.gz</code> support to Shipyard</li>
+    <li>Port Bones from using dotnet-packaging to Shipyard</li>
+    <li>Stabilize Bones and get to a 1.0.0 release, and start dogfooding to find where this starts breaking down in actual use</li>
+    <li>Write more blog posts about what I'm working on, it has been 3 years since I've written anything on this blog</li>
+  </ul>
+  <p>
+    Beyond that, we'll see where the year takes me. Happy holidays to those who celebrate, and I hope you have a great year ahead!
+  </p>
+</section>
