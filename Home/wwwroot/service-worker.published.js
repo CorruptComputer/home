@@ -51,15 +51,13 @@ async function onFetch(event) {
         cachedResponse = await cache.match(request);
     }
 
-    // Fix for Cloudflare Pages, see: https://github.com/dotnet/aspnetcore/issues/33872
     if (cachedResponse && cachedResponse.redirected) {
-        cachedResponse = 
-            new Response(cachedResponse.body,
-            {
-                headers: cachedResponse.headers,
-                status: cachedResponse.status,
-                statusText: cachedResponse.statusText
-            });
+        const clonedResponse = cachedResponse.clone();
+        cachedResponse = new Response(clonedResponse.body, {
+            headers: clonedResponse.headers,
+            status: clonedResponse.status,
+            statusText: clonedResponse.statusText
+        });
     }
 
     return cachedResponse || fetch(event.request);
